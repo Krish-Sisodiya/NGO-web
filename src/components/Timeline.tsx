@@ -318,11 +318,29 @@ export default function Roadmap() {
 
             </span>
 
-            <button className="rounded-full bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:scale-105">
+            <button
+  onClick={() => window.location.href = "/volunteer"}
 
-              Join The Journey
+  className="
+    rounded-full
+    bg-gradient-to-r
+    from-blue-600
+    to-orange-500
 
-            </button>
+    px-6
+    py-2.5
+
+    text-sm
+    font-semibold
+    text-white
+
+    shadow-md
+    transition-all
+    hover:scale-105
+  "
+>
+  Join The Journey
+</button>
           </div>
         </motion.div>
       </div>
