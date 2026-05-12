@@ -64,17 +64,76 @@ export default function Header() {
           </div>
 
           {/* 🟠 Right: Premium Join Us Button */}
-          <div className="hidden lg:flex items-center z-10">
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(245, 158, 11, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
-              className="relative overflow-hidden bg-gradient-to-r from-ngo-secondary to-orange-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2 group"
-            >
-              {/* Shine effect on hover */}
-              <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></span>
-              Join Us <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-          </div>
+         <div className="hidden lg:flex items-center z-10">
+  <motion.a
+    href="/volunteer"
+
+    whileHover={{
+      scale: 1.05,
+      boxShadow: "0 10px 25px -5px rgba(245, 158, 11, 0.4)",
+    }}
+
+    whileTap={{
+      scale: 0.95,
+    }}
+
+    className="
+      relative
+      overflow-hidden
+
+      rounded-full
+
+      bg-gradient-to-r
+      from-ngo-secondary
+      to-orange-500
+
+      px-6
+      py-2.5
+
+      text-sm
+      font-semibold
+      text-white
+
+      shadow-lg
+
+      flex
+      items-center
+      gap-2
+
+      group
+    "
+  >
+
+    {/* SHINE EFFECT */}
+    <span
+      className="
+        absolute
+        inset-0
+
+        skew-x-12
+
+        bg-white/20
+
+        translate-x-[-100%]
+
+        transition-transform
+        duration-700
+
+        group-hover:translate-x-[100%]
+      "
+    />
+
+    <span className="relative z-10 flex items-center gap-2">
+      Join Us
+
+      <ArrowRight
+        size={16}
+        className="transition-transform group-hover:translate-x-1"
+      />
+    </span>
+
+  </motion.a>
+</div>
 
           {/* 📱 Mobile Toggle */}
           <button

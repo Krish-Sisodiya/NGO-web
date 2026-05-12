@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { HeartHandshake, Eye, Target, Users, Globe, CalendarDays } from "lucide-react";
+import {  Eye, Target, } from "lucide-react";
 
 export default function Story() {
   return (
@@ -51,8 +51,9 @@ export default function Story() {
                 <p className="text-sm text-gray-600 leading-relaxed">To deliver transparent, community-driven programs that empower marginalized groups and create sustainable change.</p>
               </div>
             </motion.div>
+      
 
-            {/* Impact Stats */}
+            {/* Impact Stats 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +73,11 @@ export default function Story() {
                 </div>
               ))}
             </motion.div>
+             */}
+             
           </div>
+
+         
 
           {/* 🔹 Right: Image & Floating Elements (Desktop Only) */}
           <motion.div
@@ -92,7 +97,7 @@ export default function Story() {
               <div className="absolute inset-0 bg-gradient-to-t from-ngo-primary/40 to-transparent pointer-events-none"></div>
             </div>
 
-            {/* Floating Quote Card */}
+            {/* Floating Quote Card 
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -110,6 +115,9 @@ export default function Story() {
                 </div>
               </div>
             </motion.div>
+            */}
+
+
           </motion.div>
         </div>
       </div>

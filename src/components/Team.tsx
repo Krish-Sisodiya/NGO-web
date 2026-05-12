@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  type PanInfo,
+
+} from "framer-motion";
+
 import {
   ChevronLeft,
   ChevronRight,
@@ -45,7 +51,7 @@ const TEAM_MEMBERS = [
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=900&auto=format&fit=crop",
     quote:
-      "Transparency and measurable impact drive everything we do. Change happens one community at a time.",
+      "Transparency and measurable impact drive everything we do.",
     email: "rahul@hopengo.org",
     phone: "+91 98765 43211",
     socials: {
@@ -63,7 +69,7 @@ const TEAM_MEMBERS = [
     image:
       "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=900&auto=format&fit=crop",
     quote:
-      "Real change happens when communities lead their own transformation. We facilitate that journey.",
+      "Real change happens when communities lead transformation.",
     email: "priya@hopengo.org",
     phone: "+91 98765 43212",
     socials: {
@@ -85,13 +91,19 @@ export default function TeamSection() {
 
   const currentMember = TEAM_MEMBERS[currentIndex];
 
-  const prevSlide = () => {
-    setDirection(-1);
+  const nextIndex =
+    currentIndex === TEAM_MEMBERS.length - 1
+      ? 0
+      : currentIndex + 1;
 
-    setCurrentIndex((prev) =>
-      prev === 0 ? TEAM_MEMBERS.length - 1 : prev - 1
-    );
-  };
+  const prevIndex =
+    currentIndex === 0
+      ? TEAM_MEMBERS.length - 1
+      : currentIndex - 1;
+
+  /* ============================================================================
+     SLIDE FUNCTIONS
+  ============================================================================ */
 
   const nextSlide = () => {
     setDirection(1);
@@ -101,99 +113,161 @@ export default function TeamSection() {
     );
   };
 
-  return (
-    <section className="relative w-full overflow-hidden bg-black py-12 md:py-16">
+  const prevSlide = () => {
+    setDirection(-1);
 
-      {/* BACKGROUND EFFECTS */}
-      <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl" />
+    setCurrentIndex((prev) =>
+      prev === 0 ? TEAM_MEMBERS.length - 1 : prev - 1
+    );
+  };
+
+  /* ============================================================================
+     MOBILE SWIPE
+  ============================================================================ */
+
+  const handleDragEnd = (
+    _: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo
+  ) => {
+    if (info.offset.x < -80) {
+      nextSlide();
+    }
+
+    if (info.offset.x > 80) {
+      prevSlide();
+    }
+  };
+
+  return (
+    <section className="relative overflow-hidden bg-black py-12 md:py-16">
+
+      {/* BACKGROUND GLOW */}
+      <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
 
       <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl" />
 
       {/* CONTAINER */}
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-5 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
 
         {/* HEADER */}
-        <div className="mb-10 md:mb-14 text-center">
+        <div className="mb-10 text-center md:mb-14">
 
-          <p className="mb-3 text-[11px] md:text-xs font-semibold uppercase tracking-[4px] text-orange-400">
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[4px] text-orange-400">
             Our Leadership
           </p>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
             Meet Our Team
           </h2>
 
-          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-blue-600 to-orange-400" />
+          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-blue-500 to-orange-400" />
         </div>
 
         {/* MAIN GRID */}
-        <div className="grid items-center gap-10 lg:gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
 
-          {/* ============================================================
-              LEFT SIDE IMAGE SECTION
-          ============================================================ */}
+          {/* ============================================================================
+              LEFT IMAGE SECTION
+          ============================================================================ */}
 
           <div className="relative flex items-center justify-center">
 
-            {/* BACK CARD 1 */}
-            <div className="absolute left-4 top-8 hidden h-[300px] w-[220px] rotate-[-10deg] rounded-[1.8rem] bg-[#111111] md:block" />
+            {/* PREVIOUS IMAGE */}
+            <motion.div
+              whileHover={{
+                scale: 1.03,
+              }}
+              className="absolute left-0 top-8 hidden md:block"
+            >
+              <img
+                src={TEAM_MEMBERS[prevIndex].image}
+                alt=""
+                className="h-[260px] w-[190px] rounded-[1.8rem] object-cover opacity-30 blur-[1px]"
+              />
+            </motion.div>
 
-            {/* BACK CARD 2 */}
-            <div className="absolute right-4 top-5 hidden h-[300px] w-[220px] rotate-[8deg] rounded-[1.8rem] bg-[#1b1b1b] md:block" />
+            {/* NEXT IMAGE */}
+            <motion.div
+              whileHover={{
+                scale: 1.03,
+              }}
+              className="absolute right-0 top-8 hidden md:block"
+            >
+              <img
+                src={TEAM_MEMBERS[nextIndex].image}
+                alt=""
+                className="h-[260px] w-[190px] rounded-[1.8rem] object-cover opacity-30 blur-[1px]"
+              />
+            </motion.div>
 
-            {/* ACTIVE CARD */}
+            {/* ACTIVE IMAGE */}
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentMember.id}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragEnd={handleDragEnd}
                 custom={direction}
                 initial={{
                   opacity: 0,
-                  x: direction > 0 ? 80 : -80,
-                  scale: 0.95,
+                  x: direction > 0 ? 120 : -120,
+                  scale: 0.92,
+                  rotate: direction > 0 ? 6 : -6,
                 }}
                 animate={{
                   opacity: 1,
                   x: 0,
                   scale: 1,
+                  rotate: 0,
                 }}
                 exit={{
                   opacity: 0,
-                  x: direction < 0 ? 80 : -80,
-                  scale: 0.95,
+                  x: direction < 0 ? 120 : -120,
+                  scale: 0.92,
+                  rotate: direction < 0 ? 6 : -6,
                 }}
                 transition={{
                   duration: 0.45,
-                  ease: "easeInOut",
                 }}
-                className="relative z-20 w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px]"
+                whileHover={{
+                  rotateY: 6,
+                  rotateX: 3,
+                }}
+                className="relative z-20 w-full max-w-[280px] cursor-grab active:cursor-grabbing sm:max-w-[320px] md:max-w-[360px]"
               >
 
-                {/* CARD */}
-                <div className="overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#0f0f0f] shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
+                {/* IMAGE CARD */}
+                <div className="overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#0f0f0f] shadow-[0_20px_70px_rgba(0,0,0,0.6)]">
 
                   {/* IMAGE */}
-                  <div className="relative">
+                  <div className="relative overflow-hidden">
 
-                    <img
+                    <motion.img
+                      whileHover={{
+                        scale: 1.06,
+                      }}
+                      transition={{
+                        duration: 0.4,
+                      }}
                       src={currentMember.image}
                       alt={currentMember.name}
-                      className="h-[320px] sm:h-[380px] md:h-[450px] w-full object-cover"
+                      className="h-[320px] w-full object-cover sm:h-[380px] md:h-[450px]"
                       draggable={false}
                     />
 
                     {/* OVERLAY */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
 
-                    {/* INFO BOX */}
-                    <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
+                    {/* INFO */}
+                    <div className="absolute bottom-0 left-0 right-0 p-3">
 
-                      <div className="rounded-xl border border-white/10 bg-white/10 p-3 backdrop-blur-md">
+                      <div className="rounded-xl border border-white/10 bg-black/40 p-3 backdrop-blur-md">
 
-                        <h3 className="text-base sm:text-lg font-bold text-white">
+                        <h3 className="text-base font-bold text-white sm:text-lg">
                           {currentMember.name}
                         </h3>
 
-                        <p className="mt-1 text-xs sm:text-sm font-medium text-orange-400">
+                        <p className="mt-1 text-xs font-medium text-orange-400 sm:text-sm">
                           {currentMember.role}
                         </p>
 
@@ -205,9 +279,9 @@ export default function TeamSection() {
             </AnimatePresence>
           </div>
 
-          {/* ============================================================
-              RIGHT SIDE CONTENT
-          ============================================================ */}
+          {/* ============================================================================
+              RIGHT CONTENT
+          ============================================================================ */}
 
           <div className="flex flex-col justify-center text-center lg:text-left">
 
@@ -217,7 +291,7 @@ export default function TeamSection() {
                 key={currentMember.id}
                 initial={{
                   opacity: 0,
-                  y: 30,
+                  y: 20,
                 }}
                 animate={{
                   opacity: 1,
@@ -225,52 +299,61 @@ export default function TeamSection() {
                 }}
                 exit={{
                   opacity: 0,
-                  y: -30,
+                  y: -20,
                 }}
                 transition={{
-                  duration: 0.4,
+                  duration: 0.35,
                 }}
               >
 
-                {/* TOP TEXT */}
-                <p className="mb-3 text-[11px] sm:text-xs uppercase tracking-[4px] text-gray-500">
+                {/* SMALL TITLE */}
+                <p className="mb-3 text-[11px] uppercase tracking-[4px] text-gray-500">
                   Leadership Team
                 </p>
 
                 {/* NAME */}
-                <h2 className="bg-gradient-to-r from-white via-orange-300 to-blue-400 bg-clip-text text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-transparent">
+                <h2 className="bg-gradient-to-r from-white via-orange-300 to-blue-400 bg-clip-text text-3xl font-bold leading-tight text-transparent sm:text-4xl md:text-5xl">
                   {currentMember.name}
                 </h2>
 
                 {/* ROLE */}
-                <div className="mt-4 flex items-center justify-center lg:justify-start gap-3">
+                <div className="mt-4 flex items-center justify-center gap-3 lg:justify-start">
 
                   <div className="h-[3px] w-10 rounded-full bg-orange-400" />
 
-                  <p className="text-base md:text-lg font-semibold text-orange-400">
+                  <p className="text-sm font-semibold text-orange-400 md:text-lg">
                     {currentMember.role}
                   </p>
 
                 </div>
 
                 {/* QUOTE */}
-                <div className="relative mt-7 pl-0 lg:pl-8">
+                <div className="relative mt-6">
 
-                  <Quote className="hidden lg:block absolute left-0 top-0 h-10 w-10 text-white/10" />
+                  <Quote className="absolute left-0 top-0 hidden h-10 w-10 text-white/10 lg:block" />
 
-                  <p className="max-w-xl mx-auto lg:mx-0 text-sm sm:text-base md:text-lg leading-[1.9] text-gray-300">
-                    "{currentMember.quote}"
+                  <p className="mx-auto max-w-lg text-sm leading-[1.8] text-gray-300 sm:text-base md:text-lg lg:mx-0 lg:pl-8">
+
+                    {/* MOBILE SHORT CONTENT */}
+                    <span className="block md:hidden">
+                      {currentMember.quote.slice(0, 65)}...
+                    </span>
+
+                    {/* DESKTOP FULL CONTENT */}
+                    <span className="hidden md:block">
+                      "{currentMember.quote}"
+                    </span>
+
                   </p>
-
                 </div>
 
                 {/* CONTACT */}
-                <div className="mt-7 space-y-3 border-t border-white/10 pt-6">
+                <div className="mt-6 space-y-3 border-t border-white/10 pt-5">
 
                   {/* EMAIL */}
                   <a
                     href={`mailto:${currentMember.email}`}
-                    className="group flex items-center justify-center lg:justify-start gap-3"
+                    className="group flex items-center justify-center gap-3 lg:justify-start"
                   >
 
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/10 transition-all duration-300 group-hover:bg-blue-500">
@@ -282,18 +365,21 @@ export default function TeamSection() {
 
                     </div>
 
-                    <span className="text-sm text-gray-300 transition-colors duration-300 group-hover:text-white break-all">
+                    <span className="text-sm text-gray-300 transition-colors duration-300 group-hover:text-white">
                       {currentMember.email}
                     </span>
 
                   </a>
 
                   {/* PHONE */}
-                  <div className="flex items-center justify-center lg:justify-start gap-3">
+                  <div className="flex items-center justify-center gap-3 lg:justify-start">
 
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/10">
 
-                      <Phone size={16} className="text-green-400" />
+                      <Phone
+                        size={16}
+                        className="text-green-400"
+                      />
 
                     </div>
 
@@ -304,8 +390,8 @@ export default function TeamSection() {
                   </div>
                 </div>
 
-                {/* SOCIAL ICONS */}
-                <div className="mt-7 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                {/* SOCIALS */}
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
 
                   {[
                     {
@@ -332,16 +418,14 @@ export default function TeamSection() {
                     <motion.a
                       key={index}
                       href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       whileHover={{
                         scale: 1.1,
-                        y: -3,
+                        y: -2,
                       }}
                       whileTap={{
                         scale: 0.95,
                       }}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-[#161616] text-sm text-white transition-all duration-300 hover:border-orange-400 hover:bg-orange-400"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-[#151515] text-sm text-white transition-all duration-300 hover:border-orange-400 hover:bg-orange-400"
                     >
                       {item.icon}
                     </motion.a>
@@ -350,11 +434,11 @@ export default function TeamSection() {
               </motion.div>
             </AnimatePresence>
 
-            {/* ============================================================
+            {/* ============================================================================
                 NAVIGATION
-            ============================================================ */}
+            ============================================================================ */}
 
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
+            <div className="mt-7 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
 
               {/* BUTTONS */}
               <div className="flex items-center gap-3">
@@ -364,10 +448,10 @@ export default function TeamSection() {
                   onClick={prevSlide}
                   whileHover={{
                     scale: 1.08,
-                    x: -3,
+                    x: -2,
                   }}
                   whileTap={{
-                    scale: 0.9,
+                    scale: 0.92,
                   }}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-[#171717] text-white transition-all duration-300 hover:bg-orange-400"
                 >
@@ -379,16 +463,15 @@ export default function TeamSection() {
                   onClick={nextSlide}
                   whileHover={{
                     scale: 1.08,
-                    x: 3,
+                    x: 2,
                   }}
                   whileTap={{
-                    scale: 0.9,
+                    scale: 0.92,
                   }}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-[#171717] text-white transition-all duration-300 hover:bg-orange-400"
                 >
                   <ChevronRight size={20} />
                 </motion.button>
-
               </div>
 
               {/* DOTS */}

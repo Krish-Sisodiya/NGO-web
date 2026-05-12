@@ -1,204 +1,327 @@
 import { motion } from "framer-motion";
-import { 
-  Flag, Building2, Laptop, Globe, 
-  Users, Heart, ArrowRight, MapPin 
+
+import {
+  Flag,
+  Building2,
+  Laptop,
+  Globe,
+  Users,
+  Heart,
+  ArrowRight,
+  MapPin,
 } from "lucide-react";
 
-// ============================================================================
-// 📊 MILESTONE DATA
-// ============================================================================
+/* ============================================================================
+   ROADMAP DATA
+============================================================================ */
+
 const MILESTONES = [
   {
     year: "2015",
     title: "The First Step",
-    description: "Started with 5 passionate volunteers teaching underprivileged children in a small community center.",
+    description:
+      "Started with 5 passionate volunteers teaching children.",
     icon: Flag,
-    color: "bg-ngo-primary",
-    stats: "5 Volunteers"
+    color: "from-blue-600 to-blue-500",
+    stats: "5 Volunteers",
   },
+
   {
     year: "2018",
     title: "First Learning Hub",
-    description: "Opened our first dedicated community center in Delhi, serving 200+ children with education & meals.",
+    description:
+      "Opened our first learning center serving 200+ children.",
     icon: Building2,
-    color: "bg-ngo-secondary",
-    stats: "200+ Children"
+    color: "from-orange-500 to-orange-400",
+    stats: "200+ Children",
   },
+
   {
     year: "2021",
     title: "Digital Bridge",
-    description: "Launched online learning programs during pandemic, reaching 10,000+ students across rural India.",
+    description:
+      "Launched online learning programs across rural India.",
     icon: Laptop,
-    color: "bg-green-500",
-    stats: "10K+ Students"
+    color: "from-green-500 to-green-400",
+    stats: "10K+ Students",
   },
+
   {
     year: "2024",
     title: "National Impact",
-    description: "Now active in 8 states with 200+ full-time volunteers, creating sustainable change at scale.",
+    description:
+      "Now active in 8 states with 200+ volunteers.",
     icon: Globe,
-    color: "bg-blue-600",
-    stats: "8 States, 200+ Volunteers"
-  }
+    color: "from-purple-600 to-indigo-500",
+    stats: "8 States",
+  },
 ];
 
-// ============================================================================
-// 🧩 MAIN COMPONENT
-// ============================================================================
+/* ============================================================================
+   COMPONENT
+============================================================================ */
+
 export default function Roadmap() {
   return (
-    <section className="w-full bg-gradient-to-b from-ngo-bg to-white py-16 md:py-24 overflow-hidden relative">
-      
-      {/* Background Accents */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-ngo-primary/5 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-ngo-secondary/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] to-white py-14 md:py-20">
 
-      <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
-        
-        {/* Section Header */}
+      {/* BACKGROUND GLOW */}
+      <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
+
+      <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl" />
+
+      {/* CONTAINER */}
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
+
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="text-center mb-16 md:mb-20"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="mb-14 text-center md:mb-20"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-ngo-primary/10 text-ngo-primary rounded-full text-sm font-semibold mb-4">
-            <MapPin size={14} /> Our Journey
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ngo-primary mb-4">
-            The Road to <span className="text-ngo-secondary">Impact</span>
+
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+
+            <MapPin size={15} />
+
+            Our Journey
+
+          </div>
+
+          <h2 className="text-3xl font-bold text-[#0f172a] sm:text-4xl md:text-5xl">
+
+            The Road to{" "}
+
+            <span className="text-orange-500">
+              Impact
+            </span>
+
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
-            Follow our path from a small local initiative to a nationwide movement transforming lives.
+
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base md:text-lg">
+
+            Follow our journey from a small initiative to a nationwide movement.
+
           </p>
         </motion.div>
 
-        {/* Roadmap Container */}
+        {/* ROADMAP */}
         <div className="relative">
-          
-          {/* 🔹 Background Track (Dashed Road) */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 rounded-full border-l-2 border-dashed border-gray-300" />
 
-          {/* 🔹 Active Progress Line (Animated) */}
+          {/* CENTER ROAD LINE */}
+          <div className="absolute left-[20px] top-0 h-full w-[4px] rounded-full bg-gray-200 md:left-1/2 md:-translate-x-1/2" />
+
+          {/* ACTIVE LINE */}
           <motion.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, margin: "-150px" }}
-            transition={{ duration: 1.8, ease: "easeInOut" }}
-            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-ngo-primary via-ngo-secondary to-green-500 rounded-full origin-top"
+            initial={{
+              scaleY: 0,
+            }}
+            whileInView={{
+              scaleY: 1,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 1.6,
+            }}
+            className="absolute left-[20px] top-0 h-full w-[4px] origin-top rounded-full bg-gradient-to-b from-blue-600 via-orange-400 to-green-500 md:left-1/2 md:-translate-x-1/2"
           />
 
-          {/* 🔹 Milestone Items */}
-          <div className="space-y-0">
+          {/* ITEMS */}
+          <div className="space-y-10 md:space-y-20">
+
             {MILESTONES.map((item, index) => {
               const Icon = item.icon;
+
               const isEven = index % 2 === 0;
-              
+
               return (
-                <div 
-                  key={item.year} 
-                  className={`relative flex items-start mb-16 md:mb-24 last:mb-0 ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  } flex-row`}
+                <div
+                  key={item.year}
+                  className={`relative flex w-full ${
+                    isEven
+                      ? "md:justify-start"
+                      : "md:justify-end"
+                  }`}
                 >
-                  {/* --- Milestone Node (Center/Left) --- */}
-                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-10 pt-2">
-                    {/* Outer Pulsing Ring */}
-                    <motion.div
-                      className="absolute inset-0 rounded-full bg-ngo-secondary/20"
-                      animate={{ scale: [1, 1.6, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 2.5, repeat: Infinity, delay: index * 0.3 }}
-                    />
-                    
-                    {/* Icon Circle */}
-                    <motion.div
-                      initial={{ scale: 0, rotate: -90 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ delay: index * 0.2, type: "spring", stiffness: 180 }}
-                      className={`relative w-12 h-12 md:w-14 md:h-14 rounded-full ${item.color} flex items-center justify-center shadow-lg border-4 border-white`}
+
+                  {/* ICON NODE */}
+                  <div className="absolute left-[20px] top-6 z-20 -translate-x-1/2 md:left-1/2">
+
+                    {/* PULSE */}
+                    <div className="absolute inset-0 animate-ping rounded-full bg-orange-300 opacity-20" />
+
+                    {/* ICON */}
+                    <div
+                      className={`relative flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r ${item.color} border-4 border-white shadow-lg md:h-14 md:w-14`}
                     >
-                      <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                    </motion.div>
+                      <Icon className="h-5 w-5 text-white md:h-6 md:w-6" />
+                    </div>
                   </div>
 
-                  {/* --- Content Card --- */}
-                  <div className={`ml-20 md:ml-0 md:w-5/12 ${isEven ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <motion.div
-                      initial={{ opacity: 0, x: isEven ? -40 : 40, y: 30 }}
-                      whileInView={{ opacity: 1, x: 0, y: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ delay: index * 0.15, duration: 0.6, ease: "easeOut" }}
-                      whileHover={{ y: -6, boxShadow: "0 20px 40px -12px rgba(30, 58, 138, 0.15)" }}
-                      className="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-gray-100 transition-all duration-300 group cursor-default"
+                  {/* CARD */}
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 40,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.15,
+                    }}
+                    whileHover={{
+                      y: -5,
+                    }}
+                    className={`ml-14 w-full rounded-2xl border border-gray-100 bg-white p-5 shadow-lg transition-all duration-300 md:ml-0 md:w-[44%] ${
+                      isEven
+                        ? "md:mr-auto md:text-right"
+                        : "md:ml-auto"
+                    }`}
+                  >
+
+                    {/* YEAR */}
+                    <div
+                      className={`inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${item.color} px-3 py-1.5 text-xs font-bold text-white shadow-sm`}
                     >
-                      {/* Year Badge */}
-                      <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${item.color} text-white text-sm font-bold mb-4 shadow-sm`}>
-                        <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                        {item.year}
+
+                      <span className="h-2 w-2 animate-pulse rounded-full bg-white" />
+
+                      {item.year}
+
+                    </div>
+
+                    {/* TITLE */}
+                    <h3 className="mt-4 text-xl font-bold text-[#0f172a] md:text-2xl">
+
+                      {item.title}
+
+                    </h3>
+
+                    {/* DESCRIPTION */}
+                    <p className="mt-3 text-sm leading-relaxed text-gray-600 md:text-base">
+
+                      {item.description}
+
+                    </p>
+
+                    {/* FOOTER */}
+                    <div
+                      className={`mt-5 flex items-center justify-between border-t border-gray-100 pt-4 ${
+                        isEven
+                          ? "md:flex-row-reverse"
+                          : ""
+                      }`}
+                    >
+
+                      {/* STATS */}
+                      <div className="flex items-center gap-2 text-sm font-semibold text-blue-700">
+
+                        <Users
+                          size={15}
+                          className="text-orange-500"
+                        />
+
+                        {item.stats}
+
                       </div>
 
-                      {/* Title */}
-                      <h3 className="text-xl md:text-2xl font-bold text-ngo-primary mb-3 group-hover:text-ngo-secondary transition-colors">
-                        {item.title}
-                      </h3>
+                      {/* BUTTON */}
+                      <button className="group flex items-center gap-1 text-sm font-medium text-orange-500 transition-all hover:gap-2">
 
-                      {/* Description */}
-                      <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
-                        {item.description}
-                      </p>
+                        Explore
 
-                      {/* Stats & Link */}
-                      <div className={`flex items-center justify-between pt-4 border-t border-gray-100 ${isEven ? 'md:flex-row-reverse' : ''}`}>
-                        <div className="flex items-center gap-2 text-ngo-primary font-semibold text-sm">
-                          <Users size={14} className="text-ngo-secondary" />
-                          <span>{item.stats}</span>
-                        </div>
-                        <button className="inline-flex items-center gap-1.5 text-ngo-secondary font-medium text-sm group/link hover:gap-2.5 transition-all">
-                          Explore
-                          <ArrowRight size={14} className="transition-transform" />
-                        </button>
-                      </div>
-                    </motion.div>
-                  </div>
+                        <ArrowRight
+                          size={15}
+                          className="transition-transform"
+                        />
 
-                  {/* --- Spacer (Desktop) --- */}
-                  <div className="hidden md:block md:w-5/12" />
+                      </button>
+                    </div>
+                  </motion.div>
                 </div>
               );
             })}
           </div>
 
-          {/*  Final Destination Marker */}
+          {/* FINAL POINT */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="relative left-6 md:left-1/2 -translate-x-1/2 mt-8 text-center"
+            initial={{
+              opacity: 0,
+              scale: 0.8,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              delay: 0.5,
+            }}
+            className="relative mt-10 flex flex-col items-center"
           >
-            <div className="w-4 h-4 bg-green-500 rounded-full mx-auto mb-3 shadow-lg ring-4 ring-green-500/20 animate-pulse" />
-            <p className="text-green-600 font-semibold text-sm bg-green-50 inline-block px-4 py-2 rounded-full border border-green-200">
+
+            <div className="h-5 w-5 animate-pulse rounded-full bg-green-500 shadow-lg ring-4 ring-green-200" />
+
+            <div className="mt-4 rounded-full border border-green-200 bg-green-50 px-5 py-2 text-sm font-semibold text-green-700">
+
               🚀 Current Milestone & Beyond
-            </p>
+
+            </div>
           </motion.div>
         </div>
 
-        {/* CTA Section */}
+        {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="mt-16 md:mt-20 text-center"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.4,
+          }}
+          className="mt-16 text-center"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white px-6 py-5 rounded-2xl shadow-lg border border-gray-100">
-            <Heart className="w-5 h-5 text-ngo-secondary" />
-            <span className="text-gray-700 font-medium text-center sm:text-left">
-              Ready to walk this path with us?
+
+          <div className="inline-flex flex-col items-center gap-4 rounded-2xl border border-gray-100 bg-white px-6 py-5 shadow-lg sm:flex-row">
+
+            <Heart className="h-5 w-5 text-orange-500" />
+
+            <span className="text-sm font-medium text-gray-700 md:text-base">
+
+              Ready to walk this journey with us?
+
             </span>
-            <button className="px-6 py-2.5 bg-gradient-to-r from-ngo-primary to-ngo-secondary text-white rounded-full text-sm font-semibold hover:opacity-90 transition shadow-md hover:shadow-lg">
-              Join the Journey
+
+            <button className="rounded-full bg-gradient-to-r from-blue-600 to-orange-500 px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:scale-105">
+
+              Join The Journey
+
             </button>
           </div>
         </motion.div>

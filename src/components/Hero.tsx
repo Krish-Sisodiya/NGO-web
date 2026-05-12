@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Heart, Users, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -59,7 +59,7 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              {/* Primary Button */}
+              {/* Primary Button 
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -68,6 +68,7 @@ export default function Hero() {
                 <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></span>
                 Donate Now <Heart size={18} className="group-hover:scale-110 transition-transform" />
               </motion.button>
+              */}
 
               {/* Secondary Button */}
               <motion.button
@@ -80,13 +81,15 @@ export default function Hero() {
               </motion.button>
             </motion.div>
 
-            {/* Trust Stats */}
+            {/* Trust Stats 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
               className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-gray-300"
             >
+
+              
               <div className="flex items-center gap-2">
                 <Users size={16} className="text-ngo-secondary" />
                 <span>5,000+ Volunteers</span>
@@ -97,7 +100,9 @@ export default function Hero() {
                 <span>12 States Covered</span>
               </div>
             </motion.div>
+            */}
           </div>
+              
 
           {/* Right: Image & Floating Elements (Desktop Only) */}
           <motion.div
@@ -113,13 +118,14 @@ export default function Hero() {
                 className="rounded-3xl shadow-2xl border-4 border-white/10 w-full h-[480px] object-cover"
               />
               
-              {/* Floating Stats Card */}
+              {/* Floating Stats Card 
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
                 className="absolute -bottom-6 -left-4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100"
               >
+                
                 <div className="flex items-center gap-3">
                   <div className="bg-green-100 p-2 rounded-lg">
                     <Users size={20} className="text-green-600" />
@@ -129,21 +135,17 @@ export default function Hero() {
                     <p className="text-xs text-gray-500 font-medium">Lives Impacted</p>
                   </div>
                 </div>
+               
               </motion.div>
-
-              {/* Floating Badge */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
-                className="absolute -top-4 -right-4 bg-ngo-secondary text-white px-3 py-1.5 rounded-full shadow-lg text-sm font-semibold"
-              >
-                🤝 100% Transparent
-              </motion.div>
+ */}
+              
+              
             </div>
           </motion.div>
         </div>
       </div>
+
+    
 
       {/* 🔹 Scroll Indicator */}
       <motion.div

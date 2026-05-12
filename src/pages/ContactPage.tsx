@@ -1,16 +1,32 @@
 import { motion } from "framer-motion";
-import { 
-  FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaClock, 
-  FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp 
+
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaClock,
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
 } from "react-icons/fa";
-import { ArrowRight, ShieldCheck, Clock, MessageCircle, CheckCircle } from "lucide-react";
+
+import {
+  ArrowRight,
+  ShieldCheck,
+  MessageCircle,
+  CheckCircle,
+} from "lucide-react";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 
-// ============================================================================
-// 📞 CONTACT INFO DATA
-// ============================================================================
+/* ============================================================================
+   CONTACT INFO
+============================================================================ */
+
 const CONTACT_CARDS = [
   {
     icon: <FaEnvelope size={20} />,
@@ -18,214 +34,689 @@ const CONTACT_CARDS = [
     detail: "info@hopengo.org",
     sub: "We reply within 24 hours",
     color: "text-blue-600",
-    bg: "bg-blue-50"
+    bg: "bg-blue-50",
   },
+
   {
     icon: <FaPhoneAlt size={20} />,
     title: "Call Us",
     detail: "+91 98765 43210",
     sub: "Mon-Sat, 9AM - 6PM",
     color: "text-green-600",
-    bg: "bg-green-50"
+    bg: "bg-green-50",
   },
+
   {
     icon: <FaMapMarkerAlt size={20} />,
     title: "Visit Our Office",
     detail: "New Delhi, India",
     sub: "123 Hope Street, Sector 5",
-    color: "text-ngo-secondary",
-    bg: "bg-orange-50"
+    color: "text-orange-500",
+    bg: "bg-orange-50",
   },
+
   {
     icon: <FaClock size={20} />,
     title: "Working Hours",
     detail: "Monday - Saturday",
-    sub: "9:00 AM - 6:00 PM IST",
+    sub: "9:00 AM - 6:00 PM",
     color: "text-purple-600",
-    bg: "bg-purple-50"
-  }
+    bg: "bg-purple-50",
+  },
 ];
 
-// ============================================================================
-//  MAIN COMPONENT
-// ============================================================================
+/* ============================================================================
+   COMPONENT
+============================================================================ */
+
 export default function ContactPage() {
   return (
     <>
       <Header />
-      
-      {/* 🔹 Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-ngo-primary via-blue-900 to-black overflow-hidden">
-        {/* Background Decorations */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-ngo-secondary/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-ngo-primary/20 rounded-full blur-3xl pointer-events-none" />
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
+
+      {/* HERO SECTION */}
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-gradient-to-br
+          from-ngo-primary
+          via-blue-900
+          to-black
+
+          pt-24
+          pb-16
+
+          md:pt-32
+          md:pb-24
+        "
+      >
+
+        {/* BG EFFECTS */}
+        <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-ngo-secondary/10 blur-3xl" />
+
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-ngo-primary/20 blur-3xl" />
+
+        <div className="container relative z-10 mx-auto px-4 md:px-6">
+
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+
+            transition={{
+              duration: 0.6,
+            }}
+
+            className="mx-auto max-w-4xl text-center"
           >
-            {/* Badge */}
+
+            {/* BADGE */}
             <motion.span
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-white border border-white/20 mb-6"
+              initial={{
+                opacity: 0,
+                scale: 0.9,
+              }}
+
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+
+              transition={{
+                delay: 0.2,
+              }}
+
+              className="
+                mb-6
+                inline-flex
+                items-center
+                gap-2
+
+                rounded-full
+                border
+                border-white/20
+
+                bg-white/10
+                px-4
+                py-2
+
+                text-xs
+                font-medium
+                text-white
+
+                backdrop-blur-sm
+
+                sm:text-sm
+              "
             >
-              <MessageCircle size={14} className="text-ngo-secondary" /> We're Here to Help
+
+              <MessageCircle
+                size={14}
+                className="text-ngo-secondary"
+              />
+
+              We're Here to Help
+
             </motion.span>
-            
-            {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Get In <span className="text-ngo-secondary">Touch</span>
-            </h1>
-            
-            {/* Description */}
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-10 max-w-3xl mx-auto">
-              Have a question, want to volunteer, or need support? Reach out to us. Our team responds within 24 hours with transparency and care.
-            </p>
-            
-            {/* Quick Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+
+            {/* TITLE */}
+            <h1
+              className="
+                mb-5
+                text-4xl
+                font-bold
+                leading-tight
+                text-white
+
+                sm:text-5xl
+                lg:text-6xl
+              "
             >
+
+              Get In{" "}
+
+              <span className="text-ngo-secondary">
+                Touch
+              </span>
+
+            </h1>
+
+            {/* DESC */}
+            <p
+              className="
+                mx-auto
+                mb-8
+                max-w-3xl
+
+                text-base
+                leading-relaxed
+                text-gray-300
+
+                md:text-xl
+              "
+            >
+
+              Have questions, want to volunteer,
+              or need support? Reach out to us —
+              our team is always ready to help.
+
+            </p>
+
+            {/* BUTTONS */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+
+              transition={{
+                delay: 0.4,
+              }}
+
+              className="
+                flex
+                flex-col
+                items-center
+                justify-center
+                gap-4
+
+                sm:flex-row
+              "
+            >
+
+              {/* EMAIL */}
               <a
                 href="mailto:info@hopengo.org"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold border border-white/30 transition-all"
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+
+                  rounded-full
+                  border
+                  border-white/30
+
+                  bg-white/10
+
+                  px-6
+                  py-3
+
+                  text-sm
+                  font-semibold
+                  text-white
+
+                  transition-all
+
+                  hover:bg-white/20
+                "
               >
-                <FaEnvelope size={16} /> Email Directly
+
+                <FaEnvelope size={15} />
+
+                Email Directly
+
               </a>
+
+              {/* WHATSAPP */}
               <a
                 href="https://wa.me/919876543210"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-full font-semibold shadow-lg transition-all"
+
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+
+                  rounded-full
+
+                  bg-green-500
+
+                  px-6
+                  py-3
+
+                  text-sm
+                  font-semibold
+                  text-white
+
+                  shadow-lg
+                  transition-all
+
+                  hover:bg-green-600
+                "
               >
-                <FaWhatsapp size={16} /> Chat on WhatsApp
+
+                <FaWhatsapp size={16} />
+
+                Chat on WhatsApp
+
               </a>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/*  Contact Info Cards */}
-      <section className="py-10 md:py-16 bg-white -mt-8 md:-mt-12 relative z-20">
+      {/* CONTACT CARDS */}
+      <section
+        className="
+          relative
+          z-20
+
+          -mt-6
+          bg-white
+
+          py-10
+
+          md:-mt-10
+          md:py-14
+        "
+      >
+
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+
+          <div
+            className="
+              grid
+              gap-4
+
+              sm:grid-cols-2
+              lg:grid-cols-4
+            "
+          >
+
             {CONTACT_CARDS.map((card, i) => (
               <motion.div
                 key={card.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -6, boxShadow: "0 12px 24px -8px rgba(0,0,0,0.12)" }}
-                className="bg-ngo-bg p-6 rounded-2xl border border-gray-100 hover:border-ngo-secondary/30 transition-all group cursor-default"
+
+                initial={{
+                  opacity: 0,
+                  y: 30,
+                }}
+
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+
+                viewport={{
+                  once: true,
+                }}
+
+                transition={{
+                  delay: i * 0.1,
+                }}
+
+                whileHover={{
+                  y: -5,
+                }}
+
+                className="
+                  rounded-2xl
+                  border
+                  border-gray-100
+
+                  bg-ngo-bg
+                  p-5
+
+                  transition-all
+                  duration-300
+
+                  hover:border-ngo-secondary/30
+                  hover:shadow-lg
+                "
               >
-                <div className={`w-12 h-12 rounded-xl ${card.bg} ${card.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+
+                {/* ICON */}
+                <div
+                  className={`
+                    mb-4
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
+
+                    rounded-xl
+
+                    ${card.bg}
+                    ${card.color}
+                  `}
+                >
+
                   {card.icon}
+
                 </div>
-                <h3 className="text-lg font-bold text-ngo-primary mb-1">{card.title}</h3>
-                <p className="text-gray-800 font-medium text-sm mb-1">{card.detail}</p>
-                <p className="text-gray-500 text-xs">{card.sub}</p>
+
+                {/* TITLE */}
+                <h3 className="mb-1 text-lg font-bold text-ngo-primary">
+
+                  {card.title}
+
+                </h3>
+
+                {/* DETAIL */}
+                <p className="mb-1 text-sm font-medium text-gray-800">
+
+                  {card.detail}
+
+                </p>
+
+                {/* SUB */}
+                <p className="text-xs text-gray-500">
+
+                  {card.sub}
+
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 🔹 Main Content: Form + Direct Contact */}
-      <section className="py-16 md:py-24 bg-ngo-bg">
+      {/* MAIN SECTION */}
+      <section className="bg-ngo-bg py-14 md:py-20">
+
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start">
-            
-            {/* Left: Contact Form (Takes 3 columns) */}
+
+          <div
+            className="
+              grid
+              items-start
+              gap-8
+
+              lg:grid-cols-5
+              lg:gap-14
+            "
+          >
+
+            {/* FORM */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="lg:col-span-3 w-full"
+              initial={{
+                opacity: 0,
+                x: -30,
+              }}
+
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+
+              viewport={{
+                once: true,
+              }}
+
+              className="lg:col-span-3"
             >
-              <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-ngo-primary/10 flex items-center justify-center">
-                    <MessageCircle size={20} className="text-ngo-primary" />
+
+              <div
+                className="
+                  rounded-3xl
+                  border
+                  border-gray-100
+
+                  bg-white
+
+                  p-5
+
+                  shadow-xl
+
+                  sm:p-6
+                  md:p-8
+                "
+              >
+
+                {/* HEADER */}
+                <div className="mb-6 flex items-center gap-3">
+
+                  <div
+                    className="
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+
+                      rounded-full
+                      bg-ngo-primary/10
+                    "
+                  >
+
+                    <MessageCircle
+                      size={20}
+                      className="text-ngo-primary"
+                    />
+
                   </div>
+
                   <div>
-                    <h2 className="text-xl font-bold text-ngo-primary">Send Us a Message</h2>
-                    <p className="text-gray-500 text-sm">Fill out the form below & we'll get back to you shortly.</p>
+
+                    <h2 className="text-xl font-bold text-ngo-primary">
+
+                      Send Us a Message
+
+                    </h2>
+
+                    <p className="text-sm text-gray-500">
+
+                      Fill out the form and our
+                      team will connect with you.
+
+                    </p>
                   </div>
                 </div>
+
                 <ContactForm />
               </div>
             </motion.div>
 
-            {/* Right: Direct Contact & Socials (Takes 2 columns) */}
+            {/* RIGHT SIDE */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="lg:col-span-2 space-y-6"
+              initial={{
+                opacity: 0,
+                x: 30,
+              }}
+
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+
+              viewport={{
+                once: true,
+              }}
+
+              className="
+                space-y-6
+
+                lg:col-span-2
+              "
             >
-              {/* Why Contact Us */}
-              <div className="bg-gradient-to-br from-ngo-primary to-blue-900 text-white p-6 md:p-8 rounded-3xl shadow-xl">
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <ShieldCheck size={20} className="text-ngo-secondary" /> Why Reach Out?
+
+              {/* WHY CONTACT */}
+              <div
+                className="
+                  rounded-3xl
+
+                  bg-gradient-to-br
+                  from-ngo-primary
+                  to-blue-900
+
+                  p-6
+
+                  text-white
+                  shadow-xl
+
+                  md:p-8
+                "
+              >
+
+                <h3
+                  className="
+                    mb-5
+                    flex
+                    items-center
+                    gap-2
+
+                    text-xl
+                    font-bold
+                  "
+                >
+
+                  <ShieldCheck
+                    size={20}
+                    className="text-ngo-secondary"
+                  />
+
+                  Why Reach Out?
+
                 </h3>
-                <ul className="space-y-4 text-gray-200 text-sm">
+
+                <ul className="space-y-4 text-sm text-gray-200">
+
                   {[
                     "Transparent fund utilization reports",
+
                     "Volunteer onboarding & training details",
-                    "Partnership & CSR collaboration queries",
-                    "Beneficiary support & grievance redressal"
+
+                    "CSR & partnership collaborations",
+
+                    "Beneficiary support assistance",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                    <li
+                      key={i}
+                      className="
+                        flex
+                        items-start
+                        gap-3
+                      "
+                    >
+
+                      <CheckCircle
+                        size={16}
+                        className="
+                          mt-0.5
+                          flex-shrink-0
+                          text-green-400
+                        "
+                      />
+
                       <span>{item}</span>
+
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Social Links */}
-              <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                <h3 className="text-lg font-bold text-ngo-primary mb-4">Follow Our Journey</h3>
-                <div className="flex items-center gap-3">
+              {/* SOCIAL */}
+              <div
+                className="
+                  rounded-2xl
+                  border
+                  border-gray-100
+
+                  bg-white
+                  p-6
+
+                  shadow-lg
+                "
+              >
+
+                <h3
+                  className="
+                    mb-5
+                    text-lg
+                    font-bold
+                    text-ngo-primary
+                  "
+                >
+
+                  Follow Our Journey
+
+                </h3>
+
+                <div className="flex flex-wrap items-center gap-3">
+
                   {[
-                    { icon: <FaFacebookF size={16} />, url: "#", color: "hover:bg-blue-600" },
-                    { icon: <FaTwitter size={16} />, url: "#", color: "hover:bg-sky-500" },
-                    { icon: <FaInstagram size={16} />, url: "#", color: "hover:bg-pink-600" },
-                    { icon: <FaLinkedinIn size={16} />, url: "#", color: "hover:bg-blue-700" }
+                    {
+                      icon: <FaFacebookF size={16} />,
+                      url: "#",
+                      color: "hover:bg-blue-600",
+                    },
+
+                    {
+                      icon: <FaTwitter size={16} />,
+                      url: "#",
+                      color: "hover:bg-sky-500",
+                    },
+
+                    {
+                      icon: <FaInstagram size={16} />,
+                      url: "#",
+                      color: "hover:bg-pink-600",
+                    },
+
+                    {
+                      icon: <FaLinkedinIn size={16} />,
+                      url: "#",
+                      color: "hover:bg-blue-700",
+                    },
                   ].map((social, i) => (
                     <motion.a
                       key={i}
+
                       href={social.url}
+
                       target="_blank"
+
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.12, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`w-10 h-10 rounded-full bg-gray-100 ${social.color} text-gray-600 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm`}
-                      aria-label="Social link"
+
+                      whileHover={{
+                        scale: 1.1,
+                        y: -2,
+                      }}
+
+                      whileTap={{
+                        scale: 0.95,
+                      }}
+
+                      className={`
+                        flex
+                        h-10
+                        w-10
+                        items-center
+                        justify-center
+
+                        rounded-full
+
+                        bg-gray-100
+                        text-gray-600
+
+                        shadow-sm
+
+                        transition-all
+                        duration-300
+
+                        hover:text-white
+                        ${social.color}
+                      `}
                     >
+
                       {social.icon}
+
                     </motion.a>
                   ))}
-                </div>
-              </div>
-
-              {/* Quick Response Badge */}
-              <div className="flex items-center gap-4 bg-orange-50 border border-orange-200 p-4 rounded-xl">
-                <div className="w-10 h-10 rounded-full bg-ngo-secondary/20 flex items-center justify-center flex-shrink-0">
-                  <Clock size={18} className="text-ngo-secondary" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-800">Average Response Time</p>
-                  <p className="text-xs text-gray-600">Under 24 hours on business days</p>
                 </div>
               </div>
             </motion.div>
@@ -233,43 +724,131 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* 🔹 CTA Banner */}
-      <section className="py-12 md:py-16 bg-white">
+      {/* CTA */}
+      <section className="bg-white py-12 md:py-16">
+
         <div className="container mx-auto px-4 md:px-6">
+
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto text-center bg-gradient-to-r from-ngo-primary to-blue-800 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden"
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+
+            viewport={{
+              once: true,
+            }}
+
+            className="
+              relative
+              overflow-hidden
+
+              rounded-3xl
+
+              bg-gradient-to-r
+              from-ngo-primary
+              to-blue-800
+
+              p-8
+
+              text-center
+              shadow-xl
+
+              md:p-12
+            "
           >
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_50%,_#F59E0B_0%,_transparent_50%)]" />
-            
+
+            {/* BG EFFECT */}
+            <div
+              className="
+                absolute
+                inset-0
+                opacity-10
+
+                bg-[radial-gradient(circle_at_30%_50%,_#F59E0B_0%,_transparent_50%)]
+              "
+            />
+
             <div className="relative z-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+
+              <h2
+                className="
+                  mb-4
+                  text-2xl
+                  font-bold
+                  text-white
+
+                  md:text-3xl
+                "
+              >
+
                 Ready to Create Impact Together?
+
               </h2>
-              <p className="text-blue-100 mb-8 max-w-xl mx-auto">
-                Join 5,000+ volunteers and donors who are transforming communities across India.
+
+              <p
+                className="
+                  mx-auto
+                  mb-8
+                  max-w-xl
+
+                  text-sm
+                  leading-relaxed
+                  text-blue-100
+
+                  md:text-base
+                "
+              >
+
+                Join thousands of volunteers helping
+                communities across India.
+
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <motion.a
-                  href="/volunteer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-ngo-secondary hover:bg-orange-500 text-white rounded-full font-semibold shadow-lg transition-all"
-                >
-                  Become a Volunteer <ArrowRight size={18} />
-                </motion.a>
-                <motion.a
-                  href="/donate"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold border border-white/30 transition-all"
-                >
-                  Make a Donation
-                </motion.a>
-              </div>
+
+              <motion.a
+                href="/volunteer"
+
+                whileHover={{
+                  scale: 1.05,
+                }}
+
+                whileTap={{
+                  scale: 0.95,
+                }}
+
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+
+                  rounded-full
+
+                  bg-ngo-secondary
+
+                  px-6
+                  py-3
+
+                  text-sm
+                  font-semibold
+                  text-white
+
+                  shadow-lg
+                  transition-all
+
+                  hover:bg-orange-500
+                "
+              >
+
+                Become a Volunteer
+
+                <ArrowRight size={18} />
+
+              </motion.a>
             </div>
           </motion.div>
         </div>
