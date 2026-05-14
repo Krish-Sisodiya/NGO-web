@@ -75,42 +75,37 @@ export default function Hero() {
               */}
 
               {/* Secondary Button */}
-              {/* Secondary Button */}
               <motion.button
-                onClick={() => (window.location.href = "/volunteer")}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="
+  onClick={() => navigate("/volunteer")}
+
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+
+  className="
     border-2
     border-white/40
-
     backdrop-blur-sm
     hover:bg-white/10
-
     text-white
-
     px-8
     py-3.5
-
     rounded-full
     font-semibold
-
     flex
     items-center
     justify-center
     gap-2
-
     transition
     group
   "
-              >
-                Become a Volunteer
-                <ArrowRight
-                  size={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </motion.button>
-            </motion.div>
+>
+  Become a Volunteer
+
+  <ArrowRight
+    size={18}
+    className="group-hover:translate-x-1 transition-transform"
+  />
+</motion.button>
 
             {/* Trust Stats 
             <motion.div
