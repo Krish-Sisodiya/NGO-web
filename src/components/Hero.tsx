@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -18,10 +18,9 @@ export default function Hero() {
       {/* 🔹 Main Content */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 py-8 md:py-0">
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-7rem)] gap-10 lg:gap-16">
-          
           {/* Left: Text & CTAs */}
           <div className="text-white text-center lg:text-left max-w-2xl mx-auto lg:mx-0 w-full">
-            {/* Trust Badge */}
+            {/* Trust Badge 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -30,6 +29,7 @@ export default function Hero() {
             >
               <ShieldCheck size={14} /> Registered NGO | Impact Since 2015
             </motion.div>
+            */}
 
             {/* Heading */}
             <motion.h1
@@ -38,8 +38,11 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5"
             >
-              Empowering Communities,<br />
-              <span className="text-ngo-secondary">Building Brighter Futures</span>
+              Empowering Communities,
+              <br />
+              <span className="text-ngo-secondary">
+                Building Brighter Futures
+              </span>
             </motion.h1>
 
             {/* Paragraph */}
@@ -49,7 +52,8 @@ export default function Hero() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed"
             >
-              Every child deserves education. Every family deserves dignity. Join 5,000+ volunteers creating sustainable change across India.
+              Every child deserves education. Every family deserves dignity.
+              Join 5,000+ volunteers creating sustainable change across India.
             </motion.p>
 
             {/* Buttons */}
@@ -71,13 +75,40 @@ export default function Hero() {
               */}
 
               {/* Secondary Button */}
+              {/* Secondary Button */}
               <motion.button
+                onClick={() => (window.location.href = "/volunteer")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white/40 backdrop-blur-sm hover:bg-white/10 text-white px-8 py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition group"
+                className="
+    border-2
+    border-white/40
+
+    backdrop-blur-sm
+    hover:bg-white/10
+
+    text-white
+
+    px-8
+    py-3.5
+
+    rounded-full
+    font-semibold
+
+    flex
+    items-center
+    justify-center
+    gap-2
+
+    transition
+    group
+  "
               >
                 Become a Volunteer
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
               </motion.button>
             </motion.div>
 
@@ -102,7 +133,6 @@ export default function Hero() {
             </motion.div>
             */}
           </div>
-              
 
           {/* Right: Image & Floating Elements (Desktop Only) */}
           <motion.div
@@ -117,7 +147,7 @@ export default function Hero() {
                 alt="Community support"
                 className="rounded-3xl shadow-2xl border-4 border-white/10 w-full h-[480px] object-cover"
               />
-              
+
               {/* Floating Stats Card 
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
@@ -138,25 +168,38 @@ export default function Hero() {
                
               </motion.div>
  */}
-              
-              
             </div>
           </motion.div>
         </div>
       </div>
 
-    
-
       {/* 🔹 Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
-        transition={{ delay: 1.5, duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        transition={{
+          delay: 1.5,
+          duration: 1.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 cursor-pointer"
-        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+        onClick={() =>
+          window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+        }
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
         </svg>
       </motion.div>
     </section>

@@ -8,7 +8,6 @@ import {
   Sprout,
   ArrowRight,
   X,
-  Users,
   CheckCircle2,
 } from "lucide-react";
 
@@ -19,12 +18,12 @@ import {
 const causes = [
   {
     icon: <BookOpen className="w-7 h-7" />,
-    title: "Education For All",
+    title: "School Of Second Chance",
 
     desc:
       "Providing free schooling, digital literacy, and mentorship to underprivileged children.",
 
-    impact: "12,000+ Students Enrolled",
+  
 
     details:
       "Our education initiative provides free learning resources, digital classrooms, mentorship programs, scholarship guidance, and career support for children in rural and urban communities.",
@@ -41,12 +40,12 @@ const causes = [
 
   {
     icon: <HeartPulse className="w-7 h-7" />,
-    title: "Community Health",
+    title: "Guest Lectures",
 
     desc:
       "Mobile clinics, mental health awareness, and healthcare support for vulnerable families.",
 
-    impact: "50,000+ Beneficiaries",
+   
 
     details:
       "Our health programs focus on preventive healthcare, women wellness, mental health awareness, sanitation drives, and accessible medical support in remote regions.",
@@ -63,12 +62,12 @@ const causes = [
 
   {
     icon: <Sprout className="w-7 h-7" />,
-    title: "Sustainable Livelihood",
+    title: "Sunday Shikshak",
 
     desc:
       "Skill training and women empowerment programs for financial independence.",
 
-    impact: "3,500+ Families Empowered",
+  
 
     details:
       "We provide entrepreneurship training, skill development workshops, self-employment support, and financial literacy programs for sustainable livelihoods.",
@@ -186,21 +185,6 @@ export default function Causes() {
                 {cause.desc}
 
               </p>
-
-              {/* IMPACT */}
-              <div className="mt-5 inline-flex items-center gap-2 rounded-xl bg-gray-100 px-4 py-2">
-
-                <Users
-                  size={15}
-                  className="text-orange-500"
-                />
-
-                <span className="text-sm font-semibold text-[#0f172a]">
-
-                  {cause.impact}
-
-                </span>
-              </div>
 
               {/* BUTTON */}
               <button

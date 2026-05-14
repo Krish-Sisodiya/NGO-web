@@ -26,17 +26,13 @@ const FOOTER_LINKS = {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Our Causes", path: "/causes" },
-    { name: "Success Stories", path: "/stories" },
     { name: "Contact", path: "/contact" },
-    { name: "Volunteer", path: "/volunteer" },
   ],
 
   causes: [
-    "Education For All",
-    "Community Health",
-    "Women Empowerment",
-    "Sustainable Livelihood",
-    "Child Protection",
+    "School of Second Chance",
+    "Guest lectures",
+    "Sunday Shikshak",
   ],
 
   social: [
@@ -331,11 +327,11 @@ export default function Footer() {
                 <FaPhoneAlt className="mt-1 text-orange-400" />
 
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919685958831"
                   className="transition-colors hover:text-orange-400"
                 >
 
-                  +91 98765 43210
+                  +91 9685958831
 
                 </a>
               </motion.li>
@@ -358,7 +354,7 @@ export default function Footer() {
 
             {/* WHATSAPP BUTTON */}
             <motion.a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919685958831"
               target="_blank"
               whileHover={{
                 scale: 1.03,
@@ -437,7 +433,7 @@ export default function Footer() {
 
           </p>
 
-          {/* LEGAL */}
+          {/* LEGAL 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500">
 
             <Link
@@ -475,8 +471,11 @@ export default function Footer() {
 
             </Link>
           </div>
+           */}
         </div>
+        
       </div>
+     
 
       {/* BACK TO TOP */}
       <motion.button

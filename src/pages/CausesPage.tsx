@@ -1,84 +1,17 @@
 import { motion } from "framer-motion";
 
 import {
-  FaHeart,
   FaHandHoldingHeart,
   FaAward,
-  FaPlayCircle,
-  FaQuoteLeft,
-  FaCheckCircle,
 } from "react-icons/fa";
 
 import {
-  Target,
-  Shield,
-  Lightbulb,
   ArrowRight as ArrowRightLucide,
 } from "lucide-react";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Causes from "../components/Causes";
-
-/* ============================================================================
-   CORE PURPOSE
-============================================================================ */
-
-const CORE_PURPOSE = {
-  mission: {
-    icon: <Target size={30} />,
-
-    title: "Our Mission",
-
-    description:
-      "To create sustainable, measurable impact in education, healthcare, and livelihoods through community-driven programs.",
-
-    points: [
-      "Quality education for underprivileged children",
-      "Community health & awareness programs",
-      "Women empowerment through skill training",
-      "Transparent & measurable impact systems",
-    ],
-
-    gradient: "from-ngo-primary to-blue-700",
-  },
-
-  vision: {
-    icon: <Lightbulb size={30} />,
-
-    title: "Our Vision",
-
-    description:
-      "A world where every individual has equal access to opportunities that enable dignity, growth, and hope.",
-
-    points: [
-      "Zero child dropout regions",
-      "Self-sustaining communities",
-      "Nationwide volunteer network",
-      "Positive long-term social impact",
-    ],
-
-    gradient: "from-ngo-secondary to-orange-600",
-  },
-
-  values: {
-    icon: <Shield size={30} />,
-
-    title: "Our Values",
-
-    description:
-      "Every decision we make is guided by transparency, compassion, integrity, and innovation.",
-
-    points: [
-      "Transparency in every initiative",
-      "Compassion-driven approach",
-      "Integrity & accountability",
-      "Innovation for social change",
-    ],
-
-    gradient: "from-green-500 to-emerald-600",
-  },
-};
 
 /* ============================================================================
    GALLERY
@@ -307,206 +240,6 @@ export default function CausesPage() {
         </div>
       </section>
 
-      {/* PURPOSE SECTION */}
-      <section className="bg-ngo-bg py-14 md:py-20">
-
-        <div className="container mx-auto px-4 md:px-6">
-
-          {/* HEADER */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-
-            viewport={{
-              once: true,
-            }}
-
-            className="mb-12 text-center"
-          >
-
-            <h2
-              className="
-                mb-4
-                text-3xl
-                font-bold
-                text-ngo-primary
-
-                md:text-4xl
-              "
-            >
-
-              Our{" "}
-
-              <span className="text-ngo-secondary">
-                Purpose
-              </span>
-
-            </h2>
-
-            <p className="mx-auto max-w-2xl text-gray-600">
-
-              Guided by mission, inspired by vision,
-              and grounded in strong values.
-
-            </p>
-          </motion.div>
-
-          {/* CARDS */}
-          <div
-            className="
-              mx-auto
-              grid
-              max-w-7xl
-              gap-6
-
-              md:grid-cols-3
-            "
-          >
-
-            {[
-              CORE_PURPOSE.mission,
-              CORE_PURPOSE.vision,
-              CORE_PURPOSE.values,
-            ].map((item, i) => (
-              <motion.div
-                key={item.title}
-
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                }}
-
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-
-                viewport={{
-                  once: true,
-                }}
-
-                transition={{
-                  delay: i * 0.15,
-                }}
-
-                whileHover={{
-                  y: -6,
-                }}
-
-                className="
-                  rounded-2xl
-                  border
-                  border-gray-100
-                  bg-white
-                  p-6
-
-                  shadow-lg
-
-                  transition-all
-
-                  hover:border-ngo-secondary/30
-                "
-              >
-
-                {/* ICON */}
-                <div
-                  className={`
-                    mb-6
-                    flex
-                    h-14
-                    w-14
-                    items-center
-                    justify-center
-
-                    rounded-xl
-
-                    bg-gradient-to-br
-                    ${item.gradient}
-
-                    text-white
-                    shadow-md
-                  `}
-                >
-
-                  {item.icon}
-
-                </div>
-
-                {/* TITLE */}
-                <h3 className="mb-3 text-xl font-bold text-ngo-primary">
-
-                  {item.title}
-
-                </h3>
-
-                {/* DESC */}
-                <p className="mb-5 text-sm leading-relaxed text-gray-600">
-
-                  {item.description}
-
-                </p>
-
-                {/* POINTS */}
-                <ul className="space-y-2.5">
-
-                  {item.points.map((point, idx) => (
-                    <motion.li
-                      key={idx}
-
-                      initial={{
-                        opacity: 0,
-                        x: -10,
-                      }}
-
-                      whileInView={{
-                        opacity: 1,
-                        x: 0,
-                      }}
-
-                      viewport={{
-                        once: true,
-                      }}
-
-                      transition={{
-                        delay: i * 0.15 + idx * 0.05,
-                      }}
-
-                      className="
-                        flex
-                        items-start
-                        gap-2
-                        text-sm
-                        text-gray-700
-                      "
-                    >
-
-                      <FaCheckCircle
-                        size={14}
-                        className="
-                          mt-0.5
-                          flex-shrink-0
-                          text-green-500
-                        "
-                      />
-
-                      <span>{point}</span>
-
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CAUSES */}
       <div id="causes">
         <Causes />
@@ -721,7 +454,7 @@ export default function CausesPage() {
                   </h4>
                 </div>
 
-                {/* PLAY ICON */}
+                {/* PLAY ICON 
                 <div
                   className="
                     absolute
@@ -744,6 +477,7 @@ export default function CausesPage() {
                     group-hover:opacity-100
                   "
                 >
+                  
 
                   <FaPlayCircle
                     size={16}
@@ -751,13 +485,14 @@ export default function CausesPage() {
                   />
 
                 </div>
+                */}
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* QUOTE */}
+      {/* QUOTE 
       <section
         className="
           relative
@@ -866,6 +601,8 @@ export default function CausesPage() {
           </motion.div>
         </div>
       </section>
+
+      */}
 
       {/* CTA */}
       <section className="bg-ngo-bg py-14 md:py-20">

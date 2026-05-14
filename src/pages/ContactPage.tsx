@@ -238,7 +238,7 @@ export default function ContactPage() {
 
               {/* EMAIL */}
               <a
-                href="mailto:info@hopengo.org"
+                href="mastterkrish812@gmail.com"
                 className="
                   inline-flex
                   items-center
