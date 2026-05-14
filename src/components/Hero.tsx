@@ -7,7 +7,7 @@ export default function Hero() {
       {/* 🔹 Background Image + Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop"
+          src="/assets/hero-1.jpeg"
           alt="Community learning"
           className="w-full h-full object-cover"
           loading="eager"
@@ -143,7 +143,7 @@ export default function Hero() {
           >
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=800&auto=format&fit=crop"
+                src="/assets/img-1.jpg"
                 alt="Community support"
                 className="rounded-3xl shadow-2xl border-4 border-white/10 w-full h-[480px] object-cover"
               />

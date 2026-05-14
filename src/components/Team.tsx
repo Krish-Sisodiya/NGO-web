@@ -9,7 +9,6 @@ import {
 import {
   ChevronLeft,
   ChevronRight,
-  Quote,
   Mail,
   Phone,
 } from "lucide-react";
@@ -330,10 +329,9 @@ export default function TeamSection() {
                 {/* QUOTE */}
                 <div className="relative mt-6">
 
-                  <Quote className="absolute left-0 top-0 hidden h-10 w-10 text-white/10 lg:block" />
-
                   <p className="mx-auto max-w-lg text-sm leading-[1.8] text-gray-300 sm:text-base md:text-lg lg:mx-0 lg:pl-8">
 
+                  
                     {/* MOBILE SHORT CONTENT */}
                     <span className="block md:hidden">
                       {currentMember.quote.slice(0, 65)}...
