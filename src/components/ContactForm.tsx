@@ -38,7 +38,7 @@ export default function ContactForm() {
     try {
       //  Professional EmailJS Payload
       const templateParams = {
-        to_name: "HopeNGO Team",
+        to_name: "FSES Team",
         from_name: data.name,
         from_email: data.email,
         phone: data.phone || "Not provided",

@@ -5,10 +5,10 @@ import { FaWhatsapp } from "react-icons/fa";
 // CONFIG
 // ============================================================================
 const WHATSAPP_CONFIG = {
-  phoneNumber: "919876543210",
+  phoneNumber: "919685958831",
 
   prefillMessage:
-    "Hi HopeNGO Team! 👋 I need information about volunteering/donating.",
+    "Hi FSES Team! 👋 I need information about volunteering/donating.",
 };
 
 // ============================================================================
