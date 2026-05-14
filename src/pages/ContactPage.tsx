@@ -205,34 +205,33 @@ export default function ContactPage() {
             >
               {/* EMAIL */}
               <a
-                href="mastterkrish812@gmail.com"
+                href="mailto:falconarmy.ngo@gmail.com"
                 className="
-                  inline-flex
-                  items-center
-                  gap-2
+    inline-flex
+    items-center
+    gap-2
 
-                  rounded-full
-                  border
-                  border-white/30
+    rounded-full
+    border
+    border-white/30
 
-                  bg-white/10
+    bg-white/10
 
-                  px-6
-                  py-3
+    px-6
+    py-3
 
-                  text-sm
-                  font-semibold
-                  text-white
+    text-sm
+    font-semibold
+    text-white
 
-                  transition-all
+    transition-all
 
-                  hover:bg-white/20
-                "
+    hover:bg-white/20
+  "
               >
                 <FaEnvelope size={15} />
                 Email Directly
               </a>
-
               {/* WHATSAPP */}
               <a
                 href="https://wa.me/919685958831"
@@ -551,7 +550,6 @@ export default function ContactPage() {
 
                 <div className="flex flex-wrap items-center gap-3">
                   {[
-
                     {
                       icon: <FaInstagram size={16} />,
                       url: "https://www.instagram.com/fses.ngo?igsh=Mm1lNmQ2cTQydGlv",

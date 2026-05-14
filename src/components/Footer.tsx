@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import {
   FaEnvelope,
@@ -27,9 +28,18 @@ const FOOTER_LINKS = {
   ],
 
   causes: [
-    "School of Second Chance",
-    "Guest lectures",
-    "Sunday Shikshak",
+    {
+      name: "School of Second Chance",
+      link: "/causes#school-of-second-chance",
+    },
+    {
+      name: "Guest lectures",
+      link: "/causes#guest-lectures",
+    },
+    {
+      name: "Sunday Shikshak",
+      link: "/causes#sunday-shikshak",
+    },
   ],
 
   social: [
@@ -256,25 +266,21 @@ export default function Footer() {
             <ul className="space-y-3">
 
               {FOOTER_LINKS.causes.map((cause) => (
-                <motion.li
-                  key={cause}
-                  whileHover={{
-                    x: 4,
-                  }}
-                >
+  <motion.li
+    key={cause.name}
+    whileHover={{
+      x: 4,
+    }}
+  >
+    <HashLink smooth to={cause.link}
+      className="group flex items-center gap-2 text-sm text-gray-300 transition-colors hover:text-orange-400"
+    >
+      <span className="h-1.5 w-1.5 rounded-full bg-orange-400 opacity-0 transition-opacity group-hover:opacity-100" />
 
-                  <a
-                    href="#"
-                    className="group flex items-center gap-2 text-sm text-gray-300 transition-colors hover:text-orange-400"
-                  >
-
-                    <span className="h-1.5 w-1.5 rounded-full bg-orange-400 opacity-0 transition-opacity group-hover:opacity-100" />
-
-                    {cause}
-
-                  </a>
-                </motion.li>
-              ))}
+      {cause.name}
+    </HashLink>
+  </motion.li>
+))}
             </ul>
           </div>
 
@@ -340,7 +346,7 @@ export default function Footer() {
                 <FaMapMarkerAlt className="mt-1 text-orange-400" />
 
                 <span>
-                   331 Samrth Dream City Indore MP
+                   331 Samrth Dream City Indore 
                 </span>
               </motion.li>
             </ul>

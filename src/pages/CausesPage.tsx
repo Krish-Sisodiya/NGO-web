@@ -207,7 +207,7 @@ export default function CausesPage() {
       </section>
 
       {/* CAUSES */}
-      <div id="causes">
+      <div id="causes" >
         <Causes />
       </div>
 

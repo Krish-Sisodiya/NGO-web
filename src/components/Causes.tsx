@@ -93,7 +93,7 @@ export default function Causes() {
   >(null);
 
   return (
-    <section className="relative overflow-hidden bg-[#f8fafc] py-14 md:py-20">
+    <section className="relative overflow-hidden bg-[#f8fafc] py-14 md:py-20" >
 
       {/* BACKGROUND EFFECT */}
       <div className="absolute top-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
