@@ -1,13 +1,8 @@
 import { motion } from "framer-motion";
 
-import {
-  FaHandHoldingHeart,
-  FaAward,
-} from "react-icons/fa";
+import { FaHandHoldingHeart, FaAward } from "react-icons/fa";
 
-import {
-  ArrowRight as ArrowRightLucide,
-} from "lucide-react";
+import { ArrowRight as ArrowRightLucide } from "lucide-react";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -19,51 +14,51 @@ import Causes from "../components/Causes";
 
 const GALLERY_IMAGES = [
   {
-    src: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop",
+    src: "/assets/img-6.jpg",
 
-    title: "Education Program",
+    title: "School of Second Chance",
 
-    category: "Education",
+    category: "Evening Learning Initiative",
   },
 
   {
-    src: "https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=800&auto=format&fit=crop",
+    src: "/assets/img-5.jpeg",
 
-    title: "Health Camp",
+    title: "Guest Lecture Sessions",
 
-    category: "Healthcare",
+    category: "Technology & Awareness Program",
   },
 
   {
-    src: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=800&auto=format&fit=crop",
+    src: "/assets/img-7.jpeg",
 
-    title: "Women Empowerment",
+    title: "Sunday Shikshak",
 
-    category: "Livelihood",
+    category: "Community Education Drive",
   },
 
   {
-    src: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=800&auto=format&fit=crop",
+    src: "/assets/img-2.jpg",
 
-    title: "Community Building",
+    title: "Community Connect",
 
-    category: "Impact",
+    category: "Social Engagement Initiative",
   },
 
   {
-    src: "https://images.unsplash.com/photo-1529390003868-6c640a9376c8?q=80&w=800&auto=format&fit=crop",
+    src: "/assets/img-4.jpg",
 
-    title: "Digital Literacy",
+    title: "Cleanliness Drive",
 
-    category: "Education",
+    category: "Hygiene & Civic Awareness",
   },
 
   {
-    src: "https://images.unsplash.com/photo-1532629345422-64a4aa10a671?q=80&w=800&auto=format&fit=crop",
+    src: "/assets/img-3.JPG",
 
-    title: "Clean Water Initiative",
+    title: "Colors For Change",
 
-    category: "Healthcare",
+    category: "Creativity & Happiness Campaign",
   },
 ];
 
@@ -78,48 +73,39 @@ export default function CausesPage() {
 
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-gradient-to-br from-ngo-primary via-blue-900 to-black pt-24 pb-16 md:pt-32 md:pb-24">
-
         {/* BG EFFECTS */}
         <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-ngo-secondary/10 blur-3xl" />
 
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-ngo-primary/20 blur-3xl" />
 
         <div className="container relative z-10 mx-auto px-4 md:px-6">
-
           <motion.div
             initial={{
               opacity: 0,
               y: 30,
             }}
-
             animate={{
               opacity: 1,
               y: 0,
             }}
-
             transition={{
               duration: 0.6,
             }}
-
             className="mx-auto max-w-4xl text-center"
           >
-
             {/* BADGE */}
             <motion.span
               initial={{
                 opacity: 0,
                 scale: 0.9,
               }}
-
               animate={{
                 opacity: 1,
                 scale: 1,
               }}
-
               transition={{
                 delay: 0.2,
               }}
-
               className="
                 mb-6
                 inline-flex
@@ -139,14 +125,8 @@ export default function CausesPage() {
                 sm:text-sm
               "
             >
-
-              <FaAward
-                size={14}
-                className="text-ngo-secondary"
-              />
-
+              <FaAward size={14} className="text-ngo-secondary" />
               Impact-Driven Initiatives
-
             </motion.span>
 
             {/* TITLE */}
@@ -162,13 +142,7 @@ export default function CausesPage() {
                 lg:text-6xl
               "
             >
-
-              Our{" "}
-
-              <span className="text-ngo-secondary">
-                Causes
-              </span>
-
+              Our <span className="text-ngo-secondary">Causes</span>
             </h1>
 
             {/* DESC */}
@@ -184,24 +158,19 @@ export default function CausesPage() {
                 md:text-xl
               "
             >
-
-              Every initiative is designed for long-term,
-              measurable impact and meaningful social change.
-
+              Every initiative is focused on creating meaningful impact through
+              education, awareness, and community support.
             </p>
 
             {/* BUTTON */}
             <motion.a
               href="#causes"
-
               whileHover={{
                 scale: 1.05,
               }}
-
               whileTap={{
                 scale: 0.95,
               }}
-
               className="
                 inline-flex
                 items-center
@@ -230,11 +199,8 @@ export default function CausesPage() {
                 sm:text-base
               "
             >
-
               Explore Programs
-
               <ArrowRightLucide size={18} />
-
             </motion.a>
           </motion.div>
         </div>
@@ -257,7 +223,6 @@ export default function CausesPage() {
           md:py-20
         "
       >
-
         {/* BG */}
         <div
           className="
@@ -275,26 +240,21 @@ export default function CausesPage() {
         />
 
         <div className="container relative z-10 mx-auto px-4 md:px-6">
-
           {/* HEADER */}
           <motion.div
             initial={{
               opacity: 0,
               y: 20,
             }}
-
             whileInView={{
               opacity: 1,
               y: 0,
             }}
-
             viewport={{
               once: true,
             }}
-
             className="mb-12 text-center"
           >
-
             <h2
               className="
                 mb-4
@@ -305,20 +265,11 @@ export default function CausesPage() {
                 md:text-4xl
               "
             >
-
-              Impact{" "}
-
-              <span className="text-ngo-secondary">
-                In Action
-              </span>
-
+              Impact <span className="text-ngo-secondary">In Action</span>
             </h2>
 
             <p className="mx-auto max-w-2xl text-gray-600">
-
-              Real moments from our initiatives and
-              community programs.
-
+              Real moments from our initiatives and community programs.
             </p>
           </motion.div>
 
@@ -335,33 +286,26 @@ export default function CausesPage() {
               lg:grid-cols-3
             "
           >
-
             {GALLERY_IMAGES.map((image, i) => (
               <motion.div
                 key={i}
-
                 initial={{
                   opacity: 0,
                   scale: 0.95,
                 }}
-
                 whileInView={{
                   opacity: 1,
                   scale: 1,
                 }}
-
                 viewport={{
                   once: true,
                 }}
-
                 transition={{
                   delay: i * 0.08,
                 }}
-
                 whileHover={{
                   y: -4,
                 }}
-
                 className="
                   group
                   relative
@@ -371,7 +315,6 @@ export default function CausesPage() {
                   shadow-md
                 "
               >
-
                 {/* IMAGE */}
                 <img
                   src={image.src}
@@ -429,7 +372,6 @@ export default function CausesPage() {
                     group-hover:opacity-100
                   "
                 >
-
                   <span
                     className="
                       mb-2
@@ -442,15 +384,11 @@ export default function CausesPage() {
                       text-white
                     "
                   >
-
                     {image.category}
-
                   </span>
 
                   <h4 className="mb-1 text-sm font-semibold text-white">
-
                     {image.title}
-
                   </h4>
                 </div>
 
@@ -606,24 +544,19 @@ export default function CausesPage() {
 
       {/* CTA */}
       <section className="bg-ngo-bg py-14 md:py-20">
-
         <div className="container mx-auto px-4 md:px-6">
-
           <motion.div
             initial={{
               opacity: 0,
               y: 30,
             }}
-
             whileInView={{
               opacity: 1,
               y: 0,
             }}
-
             viewport={{
               once: true,
             }}
-
             className="
               mx-auto
               max-w-4xl
@@ -644,13 +577,11 @@ export default function CausesPage() {
               md:p-12
             "
           >
-
             {/* ICON */}
             <motion.div
               whileHover={{
                 scale: 1.05,
               }}
-
               className="
                 mb-6
                 inline-flex
@@ -669,9 +600,7 @@ export default function CausesPage() {
                 shadow-lg
               "
             >
-
               <FaHandHoldingHeart size={28} />
-
             </motion.div>
 
             {/* TITLE */}
@@ -686,9 +615,7 @@ export default function CausesPage() {
                 md:text-4xl
               "
             >
-
-              Which Cause Resonates With You?
-
+              Be a Part of the Change
             </h2>
 
             {/* DESC */}
@@ -705,25 +632,20 @@ export default function CausesPage() {
                 md:text-lg
               "
             >
-
-              Your support through volunteering
-              and awareness creates meaningful
-              change in communities.
-
+              Your support through volunteering, awareness, and community
+              participation can help create a better future for children and
+              society.
             </p>
 
             {/* BUTTON */}
             <motion.a
               href="/volunteer"
-
               whileHover={{
                 scale: 1.05,
               }}
-
               whileTap={{
                 scale: 0.95,
               }}
-
               className="
                 inline-flex
                 items-center
@@ -752,11 +674,8 @@ export default function CausesPage() {
                 sm:text-base
               "
             >
-
               Volunteer With Us
-
               <ArrowRightLucide size={18} />
-
             </motion.a>
           </motion.div>
         </div>

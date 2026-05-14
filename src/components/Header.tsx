@@ -34,13 +34,27 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-20">
-          {/* 🔵 Left: Logo */}
-          <Link to="/" className="flex items-center gap-2 z-10">
-            <Heart className={`w-7 h-7 fill-current transition-colors ${scrolled || !isHome ? "text-ngo-secondary" : "text-white"}`} />
-            <span className={`text-xl font-bold tracking-wide ${textColor}`}>
-              Hope<span className="text-ngo-secondary">NGO</span>
-            </span>
-          </Link>
+         {/* 🔵 Left: Logo */}
+<Link
+  to="/"
+  className="flex items-center gap-3 z-10"
+>
+
+  {/* LOGO IMAGE */}
+  <img
+    src="/assets/fses-logo.png"
+    alt="FSES Logo"
+    className="h-11 w-11 object-cover"
+  />
+
+  {/* TEXT */}
+  <span
+    className={`text-xl font-bold tracking-wide ${textColor}`}
+  >
+    FS<span className="text-ngo-secondary">ES</span>
+  </span>
+
+</Link>
 
           {/* 🟡 Center: Navigation Tabs with Icons */}
           <div className="hidden lg:flex flex-1 justify-center items-center gap-6">

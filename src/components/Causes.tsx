@@ -21,18 +21,18 @@ const causes = [
     title: "School Of Second Chance",
 
     desc:
-      "Providing free schooling, digital literacy, and mentorship to underprivileged children.",
+      "Supporting dropout and working children by providing evening education and learning opportunities.",
 
   
 
     details:
-      "Our education initiative provides free learning resources, digital classrooms, mentorship programs, scholarship guidance, and career support for children in rural and urban communities.",
+      "Helping dropout and working children continue their education through flexible learning support.",
 
     benefits: [
-      "Free School Support",
-      "Digital Literacy",
-      "Scholarship Guidance",
-      "Career Mentorship",
+      "Evening learning support",
+      "Education for dropout children",
+      "Basic literacy and guidance",
+      "Encouraging children to continue learning",
     ],
 
     gradient: "from-blue-500 to-cyan-400",
@@ -43,18 +43,18 @@ const causes = [
     title: "Guest Lectures",
 
     desc:
-      "Mobile clinics, mental health awareness, and healthcare support for vulnerable families.",
+      "Conducting sessions in schools to spread awareness about technology, digital literacy, civic sense, and personal growth.",
 
    
 
     details:
-      "Our health programs focus on preventive healthcare, women wellness, mental health awareness, sanitation drives, and accessible medical support in remote regions.",
+      "Interactive sessions in schools to spread awareness about technology, digital learning, and civic values.",
 
     benefits: [
-      "Medical Camps",
-      "Mental Health Awareness",
-      "Sanitation Drives",
-      "Women Healthcare",
+      "Digital awareness",
+      "Technology education",
+      "Civic sense sessions",
+      "Career and Personal guidance",
     ],
 
     gradient: "from-red-500 to-pink-400",
@@ -65,18 +65,18 @@ const causes = [
     title: "Sunday Shikshak",
 
     desc:
-      "Skill training and women empowerment programs for financial independence.",
+      "Teaching children in slum and underserved areas every Sunday through community-based learning programs.",
 
   
 
     details:
-      "We provide entrepreneurship training, skill development workshops, self-employment support, and financial literacy programs for sustainable livelihoods.",
+      "Weekend community teaching initiative for children living in slum and underserved areas.",
 
     benefits: [
-      "Skill Training",
-      "Women Empowerment",
-      "Self Employment",
-      "Financial Literacy",
+      "Community-Based Teaching",
+      "Free Sunday Classes",
+      "Creative Learning Activities",
+      "Motivation and Mentorship",
     ],
 
     gradient: "from-emerald-500 to-teal-400",

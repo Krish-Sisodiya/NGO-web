@@ -1,16 +1,11 @@
 import { motion } from "framer-motion";
-import {
-  FaHeart,
-  FaHandHoldingHeart,
-  FaQuoteLeft,
-} from "react-icons/fa";
+import { FaHandHoldingHeart,} from "react-icons/fa";
 
 import { ArrowRight } from "lucide-react";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Story from "../components/Story";
-import Team from "../components/Team";
 
 /* ============================================================================
    COMPONENT
@@ -23,32 +18,26 @@ export default function AboutPage() {
 
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-gradient-to-br from-ngo-primary via-blue-900 to-black pt-24 pb-16 md:pt-32 md:pb-24">
-
         {/* BG EFFECT */}
         <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-ngo-secondary/10 blur-3xl" />
 
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-ngo-primary/20 blur-3xl" />
 
         <div className="container relative z-10 mx-auto px-4 md:px-6">
-
           <motion.div
             initial={{
               opacity: 0,
               y: 30,
             }}
-
             animate={{
               opacity: 1,
               y: 0,
             }}
-
             transition={{
               duration: 0.6,
             }}
-
             className="mx-auto max-w-4xl text-center"
           >
-
             {/* BADGE 
             <motion.span
               initial={{
@@ -106,13 +95,8 @@ export default function AboutPage() {
                 lg:text-6xl
               "
             >
-
-              About{" "}
-
-              <span className="text-ngo-secondary">
-                HopeNGO
-              </span>
-
+              About Falcon Social and{" "}
+              <span className="text-ngo-secondary">Educational Society</span>
             </h1>
 
             {/* DESCRIPTION */}
@@ -129,11 +113,11 @@ export default function AboutPage() {
                 md:text-xl
               "
             >
-
-              We are a registered non-profit organization dedicated
-              to social upliftment, education, and sustainable
-              community development across India.
-
+              Falcon Social and Educational Society is a non-profit organization
+              dedicated to empowering children and communities through
+              education, awareness, and social development initiatives. We work
+              to create equal learning opportunities and inspire positive change
+              in society.
             </p>
 
             {/* BUTTONS */}
@@ -148,19 +132,15 @@ export default function AboutPage() {
                 sm:flex-row
               "
             >
-
               {/* BTN */}
               <motion.a
                 href="/contact"
-
                 whileHover={{
                   scale: 1.05,
                 }}
-
                 whileTap={{
                   scale: 0.95,
                 }}
-
                 className="
                   inline-flex
                   items-center
@@ -188,25 +168,19 @@ export default function AboutPage() {
                   sm:text-base
                 "
               >
-
                 Join Our Mission
-
                 <ArrowRight size={18} />
-
               </motion.a>
 
               {/* BTN */}
               <motion.a
                 href="/causes"
-
                 whileHover={{
                   scale: 1.05,
                 }}
-
                 whileTap={{
                   scale: 0.95,
                 }}
-
                 className="
                   inline-flex
                   items-center
@@ -232,9 +206,7 @@ export default function AboutPage() {
                   sm:text-base
                 "
               >
-
                 Explore Causes
-
               </motion.a>
             </div>
           </motion.div>
@@ -244,118 +216,21 @@ export default function AboutPage() {
       {/* STORY */}
       <Story />
 
-      {/* QUOTE */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-ngo-primary to-blue-900 py-16 md:py-24">
-
-        <div className="absolute inset-0 bg-black/20" />
-
-        <div className="container relative z-10 mx-auto px-4 md:px-6">
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.95,
-            }}
-
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-            }}
-
-            viewport={{
-              once: true,
-            }}
-
-            className="mx-auto max-w-4xl text-center"
-          >
-
-            <FaQuoteLeft
-              size={40}
-              className="mx-auto mb-6 text-ngo-secondary/30"
-            />
-
-            <blockquote
-              className="
-                mb-8
-                text-xl
-                font-medium
-                leading-relaxed
-                text-white
-
-                md:text-2xl
-                lg:text-3xl
-              "
-            >
-
-              "The best way to find yourself is
-              to lose yourself in the service
-              of others."
-
-            </blockquote>
-
-            <cite className="flex items-center justify-center gap-3 not-italic">
-
-              <div
-                className="
-                  flex
-                  h-12
-                  w-12
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-ngo-secondary/20
-                "
-              >
-
-                <FaHeart
-                  size={18}
-                  className="text-ngo-secondary"
-                />
-
-              </div>
-
-              <div className="text-left">
-
-                <span className="block font-semibold text-white">
-
-                  Mahatma Gandhi
-
-                </span>
-
-                <span className="text-sm text-gray-400">
-
-                  Inspiration for our mission
-
-                </span>
-              </div>
-            </cite>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* TEAM */}
-      <Team />
-
       {/* CTA */}
       <section className="overflow-hidden bg-ngo-bg py-14 md:py-20">
-
         <div className="container mx-auto px-4 md:px-6">
-
           <motion.div
             initial={{
               opacity: 0,
               y: 30,
             }}
-
             whileInView={{
               opacity: 1,
               y: 0,
             }}
-
             viewport={{
               once: true,
             }}
-
             className="
               relative
               mx-auto
@@ -372,7 +247,6 @@ export default function AboutPage() {
               md:p-12
             "
           >
-
             {/* BG */}
             <div className="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-ngo-secondary/10 blur-3xl" />
 
@@ -384,7 +258,6 @@ export default function AboutPage() {
                 scale: 1.06,
                 rotate: 4,
               }}
-
               className="
                 relative
                 z-10
@@ -403,9 +276,7 @@ export default function AboutPage() {
                 shadow-xl
               "
             >
-
               <FaHandHoldingHeart size={28} />
-
             </motion.div>
 
             {/* TITLE */}
@@ -423,9 +294,7 @@ export default function AboutPage() {
                 md:text-4xl
               "
             >
-
               Ready to Make a Difference?
-
             </h2>
 
             {/* TEXT */}
@@ -445,28 +314,21 @@ export default function AboutPage() {
                 md:text-lg
               "
             >
-
-              Join volunteers helping communities
-              through education, healthcare,
-              and sustainable development.
-
+              Join us in empowering children and communities through education,
+              awareness, and social development initiatives.
             </p>
 
             {/* BUTTON */}
             <div className="relative z-10 mt-8 flex justify-center">
-
               <motion.a
                 href="/volunteer"
-
                 whileHover={{
                   scale: 1.04,
                   y: -2,
                 }}
-
                 whileTap={{
                   scale: 0.96,
                 }}
-
                 className="
                   inline-flex
                   items-center
@@ -496,11 +358,8 @@ export default function AboutPage() {
                   sm:text-base
                 "
               >
-
                 Become a Volunteer
-
                 <ArrowRight size={18} />
-
               </motion.a>
             </div>
           </motion.div>

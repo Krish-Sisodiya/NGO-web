@@ -85,10 +85,10 @@ export default function ContactForm() {
             <MapPin size={14} /> Get In Touch
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-ngo-primary mb-3">
-            Let's Build <span className="text-ngo-secondary">Hope Together</span>
+            Let's Build A <span className="text-ngo-secondary">Better Future Together</span>
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            Have a question, want to volunteer, or need support? Fill out the form and our team will respond within 24 hours.
+             Have a question, want to volunteer, collaborate, or support our mission? Reach out to us and our team will get back to you as soon as possible.
           </p>
         </motion.div>
 

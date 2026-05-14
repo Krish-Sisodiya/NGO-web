@@ -5,8 +5,6 @@ import {
   FaPhoneAlt,
   FaMapMarkerAlt,
   FaClock,
-  FaFacebookF,
-  FaTwitter,
   FaInstagram,
   FaLinkedinIn,
   FaWhatsapp,
@@ -31,8 +29,7 @@ const CONTACT_CARDS = [
   {
     icon: <FaEnvelope size={20} />,
     title: "Email Us",
-    detail: "info@hopengo.org",
-    sub: "We reply within 24 hours",
+    detail: "falconarmy.ngo@gmail.com",
     color: "text-blue-600",
     bg: "bg-blue-50",
   },
@@ -40,8 +37,8 @@ const CONTACT_CARDS = [
   {
     icon: <FaPhoneAlt size={20} />,
     title: "Call Us",
-    detail: "+91 98765 43210",
-    sub: "Mon-Sat, 9AM - 6PM",
+    detail: "+91 9685958831",
+    sub: "Mon-Sun,",
     color: "text-green-600",
     bg: "bg-green-50",
   },
@@ -49,17 +46,16 @@ const CONTACT_CARDS = [
   {
     icon: <FaMapMarkerAlt size={20} />,
     title: "Visit Our Office",
-    detail: "New Delhi, India",
-    sub: "123 Hope Street, Sector 5",
+    detail: "Indore, MP",
+    sub: "331 Samrth Dream City",
     color: "text-orange-500",
     bg: "bg-orange-50",
   },
 
   {
     icon: <FaClock size={20} />,
-    title: "Working Hours",
-    detail: "Monday - Saturday",
-    sub: "9:00 AM - 6:00 PM",
+    title: "Working Days",
+    detail: "Monday - Sunday",
     color: "text-purple-600",
     bg: "bg-purple-50",
   },
@@ -68,7 +64,6 @@ const CONTACT_CARDS = [
 /* ============================================================================
    COMPONENT
 ============================================================================ */
-
 export default function ContactPage() {
   return (
     <>
@@ -91,48 +86,39 @@ export default function ContactPage() {
           md:pb-24
         "
       >
-
         {/* BG EFFECTS */}
         <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-ngo-secondary/10 blur-3xl" />
 
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-ngo-primary/20 blur-3xl" />
 
         <div className="container relative z-10 mx-auto px-4 md:px-6">
-
           <motion.div
             initial={{
               opacity: 0,
               y: 30,
             }}
-
             animate={{
               opacity: 1,
               y: 0,
             }}
-
             transition={{
               duration: 0.6,
             }}
-
             className="mx-auto max-w-4xl text-center"
           >
-
             {/* BADGE */}
             <motion.span
               initial={{
                 opacity: 0,
                 scale: 0.9,
               }}
-
               animate={{
                 opacity: 1,
                 scale: 1,
               }}
-
               transition={{
                 delay: 0.2,
               }}
-
               className="
                 mb-6
                 inline-flex
@@ -156,14 +142,8 @@ export default function ContactPage() {
                 sm:text-sm
               "
             >
-
-              <MessageCircle
-                size={14}
-                className="text-ngo-secondary"
-              />
-
+              <MessageCircle size={14} className="text-ngo-secondary" />
               We're Here to Help
-
             </motion.span>
 
             {/* TITLE */}
@@ -179,13 +159,7 @@ export default function ContactPage() {
                 lg:text-6xl
               "
             >
-
-              Get In{" "}
-
-              <span className="text-ngo-secondary">
-                Touch
-              </span>
-
+              Get In <span className="text-ngo-secondary">Touch</span>
             </h1>
 
             {/* DESC */}
@@ -202,11 +176,8 @@ export default function ContactPage() {
                 md:text-xl
               "
             >
-
-              Have questions, want to volunteer,
-              or need support? Reach out to us —
-              our team is always ready to help.
-
+              Have questions, want to volunteer, collaborate, or support our
+              mission? We’d love to connect with you.
             </p>
 
             {/* BUTTONS */}
@@ -215,16 +186,13 @@ export default function ContactPage() {
                 opacity: 0,
                 y: 20,
               }}
-
               animate={{
                 opacity: 1,
                 y: 0,
               }}
-
               transition={{
                 delay: 0.4,
               }}
-
               className="
                 flex
                 flex-col
@@ -235,7 +203,6 @@ export default function ContactPage() {
                 sm:flex-row
               "
             >
-
               {/* EMAIL */}
               <a
                 href="mastterkrish812@gmail.com"
@@ -262,19 +229,15 @@ export default function ContactPage() {
                   hover:bg-white/20
                 "
               >
-
                 <FaEnvelope size={15} />
-
                 Email Directly
-
               </a>
 
               {/* WHATSAPP */}
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919685958831"
                 target="_blank"
                 rel="noopener noreferrer"
-
                 className="
                   inline-flex
                   items-center
@@ -297,11 +260,8 @@ export default function ContactPage() {
                   hover:bg-green-600
                 "
               >
-
                 <FaWhatsapp size={16} />
-
                 Chat on WhatsApp
-
               </a>
             </motion.div>
           </motion.div>
@@ -323,9 +283,7 @@ export default function ContactPage() {
           md:py-14
         "
       >
-
         <div className="container mx-auto px-4 md:px-6">
-
           <div
             className="
               grid
@@ -335,33 +293,26 @@ export default function ContactPage() {
               lg:grid-cols-4
             "
           >
-
             {CONTACT_CARDS.map((card, i) => (
               <motion.div
                 key={card.title}
-
                 initial={{
                   opacity: 0,
                   y: 30,
                 }}
-
                 whileInView={{
                   opacity: 1,
                   y: 0,
                 }}
-
                 viewport={{
                   once: true,
                 }}
-
                 transition={{
                   delay: i * 0.1,
                 }}
-
                 whileHover={{
                   y: -5,
                 }}
-
                 className="
                   rounded-2xl
                   border
@@ -377,7 +328,6 @@ export default function ContactPage() {
                   hover:shadow-lg
                 "
               >
-
                 {/* ICON */}
                 <div
                   className={`
@@ -394,31 +344,21 @@ export default function ContactPage() {
                     ${card.color}
                   `}
                 >
-
                   {card.icon}
-
                 </div>
 
                 {/* TITLE */}
                 <h3 className="mb-1 text-lg font-bold text-ngo-primary">
-
                   {card.title}
-
                 </h3>
 
                 {/* DETAIL */}
                 <p className="mb-1 text-sm font-medium text-gray-800">
-
                   {card.detail}
-
                 </p>
 
                 {/* SUB */}
-                <p className="text-xs text-gray-500">
-
-                  {card.sub}
-
-                </p>
+                <p className="text-xs text-gray-500">{card.sub}</p>
               </motion.div>
             ))}
           </div>
@@ -427,9 +367,7 @@ export default function ContactPage() {
 
       {/* MAIN SECTION */}
       <section className="bg-ngo-bg py-14 md:py-20">
-
         <div className="container mx-auto px-4 md:px-6">
-
           <div
             className="
               grid
@@ -440,26 +378,21 @@ export default function ContactPage() {
               lg:gap-14
             "
           >
-
             {/* FORM */}
             <motion.div
               initial={{
                 opacity: 0,
                 x: -30,
               }}
-
               whileInView={{
                 opacity: 1,
                 x: 0,
               }}
-
               viewport={{
                 once: true,
               }}
-
               className="lg:col-span-3"
             >
-
               <div
                 className="
                   rounded-3xl
@@ -476,10 +409,8 @@ export default function ContactPage() {
                   md:p-8
                 "
               >
-
                 {/* HEADER */}
                 <div className="mb-6 flex items-center gap-3">
-
                   <div
                     className="
                       flex
@@ -492,27 +423,16 @@ export default function ContactPage() {
                       bg-ngo-primary/10
                     "
                   >
-
-                    <MessageCircle
-                      size={20}
-                      className="text-ngo-primary"
-                    />
-
+                    <MessageCircle size={20} className="text-ngo-primary" />
                   </div>
 
                   <div>
-
                     <h2 className="text-xl font-bold text-ngo-primary">
-
                       Send Us a Message
-
                     </h2>
 
                     <p className="text-sm text-gray-500">
-
-                      Fill out the form and our
-                      team will connect with you.
-
+                      Fill out the form and our team will connect with you.
                     </p>
                   </div>
                 </div>
@@ -527,23 +447,19 @@ export default function ContactPage() {
                 opacity: 0,
                 x: 30,
               }}
-
               whileInView={{
                 opacity: 1,
                 x: 0,
               }}
-
               viewport={{
                 once: true,
               }}
-
               className="
                 space-y-6
 
                 lg:col-span-2
               "
             >
-
               {/* WHY CONTACT */}
               <div
                 className="
@@ -561,7 +477,6 @@ export default function ContactPage() {
                   md:p-8
                 "
               >
-
                 <h3
                   className="
                     mb-5
@@ -573,26 +488,19 @@ export default function ContactPage() {
                     font-bold
                   "
                 >
-
-                  <ShieldCheck
-                    size={20}
-                    className="text-ngo-secondary"
-                  />
-
-                  Why Reach Out?
-
+                  <ShieldCheck size={20} className="text-ngo-secondary" />
+                  Why Connect With Us?
                 </h3>
 
                 <ul className="space-y-4 text-sm text-gray-200">
-
                   {[
-                    "Transparent fund utilization reports",
+                    "Volunteer opportunities",
 
-                    "Volunteer onboarding & training details",
+                    "Partnership & collaboration support",
 
-                    "CSR & partnership collaborations",
+                    "Educational initiative details",
 
-                    "Beneficiary support assistance",
+                    "Help and general assistance",
                   ].map((item, i) => (
                     <li
                       key={i}
@@ -602,7 +510,6 @@ export default function ContactPage() {
                         gap-3
                       "
                     >
-
                       <CheckCircle
                         size={16}
                         className="
@@ -613,7 +520,6 @@ export default function ContactPage() {
                       />
 
                       <span>{item}</span>
-
                     </li>
                   ))}
                 </ul>
@@ -632,7 +538,6 @@ export default function ContactPage() {
                   shadow-lg
                 "
               >
-
                 <h3
                   className="
                     mb-5
@@ -641,56 +546,36 @@ export default function ContactPage() {
                     text-ngo-primary
                   "
                 >
-
                   Follow Our Journey
-
                 </h3>
 
                 <div className="flex flex-wrap items-center gap-3">
-
                   {[
-                    {
-                      icon: <FaFacebookF size={16} />,
-                      url: "#",
-                      color: "hover:bg-blue-600",
-                    },
-
-                    {
-                      icon: <FaTwitter size={16} />,
-                      url: "#",
-                      color: "hover:bg-sky-500",
-                    },
 
                     {
                       icon: <FaInstagram size={16} />,
-                      url: "#",
+                      url: "https://www.instagram.com/fses.ngo?igsh=Mm1lNmQ2cTQydGlv",
                       color: "hover:bg-pink-600",
                     },
 
                     {
                       icon: <FaLinkedinIn size={16} />,
-                      url: "#",
+                      url: "https://www.linkedin.com/company/falconarmyngo/",
                       color: "hover:bg-blue-700",
                     },
                   ].map((social, i) => (
                     <motion.a
                       key={i}
-
                       href={social.url}
-
                       target="_blank"
-
                       rel="noopener noreferrer"
-
                       whileHover={{
                         scale: 1.1,
                         y: -2,
                       }}
-
                       whileTap={{
                         scale: 0.95,
                       }}
-
                       className={`
                         flex
                         h-10
@@ -712,9 +597,7 @@ export default function ContactPage() {
                         ${social.color}
                       `}
                     >
-
                       {social.icon}
-
                     </motion.a>
                   ))}
                 </div>
@@ -726,24 +609,19 @@ export default function ContactPage() {
 
       {/* CTA */}
       <section className="bg-white py-12 md:py-16">
-
         <div className="container mx-auto px-4 md:px-6">
-
           <motion.div
             initial={{
               opacity: 0,
               y: 20,
             }}
-
             whileInView={{
               opacity: 1,
               y: 0,
             }}
-
             viewport={{
               once: true,
             }}
-
             className="
               relative
               overflow-hidden
@@ -762,7 +640,6 @@ export default function ContactPage() {
               md:p-12
             "
           >
-
             {/* BG EFFECT */}
             <div
               className="
@@ -775,7 +652,6 @@ export default function ContactPage() {
             />
 
             <div className="relative z-10">
-
               <h2
                 className="
                   mb-4
@@ -786,9 +662,7 @@ export default function ContactPage() {
                   md:text-3xl
                 "
               >
-
                 Ready to Create Impact Together?
-
               </h2>
 
               <p
@@ -804,23 +678,17 @@ export default function ContactPage() {
                   md:text-base
                 "
               >
-
-                Join thousands of volunteers helping
-                communities across India.
-
+                Join thousands of volunteers helping communities across India.
               </p>
 
               <motion.a
                 href="/volunteer"
-
                 whileHover={{
                   scale: 1.05,
                 }}
-
                 whileTap={{
                   scale: 0.95,
                 }}
-
                 className="
                   inline-flex
                   items-center
@@ -843,11 +711,8 @@ export default function ContactPage() {
                   hover:bg-orange-500
                 "
               >
-
                 Become a Volunteer
-
                 <ArrowRight size={18} />
-
               </motion.a>
             </div>
           </motion.div>

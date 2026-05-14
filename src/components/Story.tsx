@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import {  Eye, Target, } from "lucide-react";
+import { Eye, Target } from "lucide-react";
 
 export default function Story() {
   return (
@@ -10,7 +10,6 @@ export default function Story() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
           {/* 🔹 Left: Story, Vision & Stats */}
           <div className="space-y-8">
             {/* Heading */}
@@ -24,7 +23,12 @@ export default function Story() {
                 Our Story & <span className="text-ngo-secondary">Vision</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Founded in 2015, HopeNGO began with a simple yet powerful belief: every child deserves quality education, and every family deserves dignity. What started as a weekend teaching initiative by 5 volunteers has grown into a nationwide movement touching thousands of lives.
+                Falcon Social and Educational Society was started with a simple
+                vision to make education and awareness accessible for every
+                child, especially those who are deprived of proper learning
+                opportunities. Through community teaching, awareness sessions,
+                and social initiatives, we are working to create a better and
+                brighter future.
               </p>
             </motion.div>
 
@@ -41,17 +45,22 @@ export default function Story() {
                   <Eye className="w-5 h-5 text-ngo-primary" />
                 </div>
                 <h3 className="font-bold text-ngo-text mb-2">Our Vision</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">A world where poverty doesn't dictate potential, and every community thrives through education and opportunity.</p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  To build a society where every child gets equal access to
+                  education, awareness, and opportunities.
+                </p>
               </div>
               <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition group">
                 <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition">
                   <Target className="w-5 h-5 text-ngo-secondary" />
                 </div>
                 <h3 className="font-bold text-ngo-text mb-2">Our Mission</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">To deliver transparent, community-driven programs that empower marginalized groups and create sustainable change.</p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  To empower children and communities through learning,
+                  guidance, digital awareness, and social support.
+                </p>
               </div>
             </motion.div>
-      
 
             {/* Impact Stats 
             <motion.div
@@ -74,10 +83,7 @@ export default function Story() {
               ))}
             </motion.div>
              */}
-             
           </div>
-
-         
 
           {/* 🔹 Right: Image & Floating Elements (Desktop Only) */}
           <motion.div
@@ -89,9 +95,9 @@ export default function Story() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/60">
               <img
-                src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=1000&auto=format&fit=crop"
+                src="/assets/img-8.jpeg"
                 alt="Volunteers teaching children in rural India"
-                className="w-full h-[520px] object-cover"
+                className="w-full h-[32.5rem] object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ngo-primary/40 to-transparent pointer-events-none"></div>
@@ -116,8 +122,6 @@ export default function Story() {
               </div>
             </motion.div>
             */}
-
-
           </motion.div>
         </div>
       </div>

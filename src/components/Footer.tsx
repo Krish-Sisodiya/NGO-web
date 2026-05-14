@@ -3,15 +3,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import {
-  FaHeart,
   FaEnvelope,
   FaPhoneAlt,
   FaMapMarkerAlt,
-  FaFacebookF,
-  FaTwitter,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube,
+ 
   FaWhatsapp,
   FaArrowUp,
   FaCheckCircle,
@@ -36,47 +33,22 @@ const FOOTER_LINKS = {
   ],
 
   social: [
-    {
-      icon: <FaFacebookF size={15} />,
-      url: "#",
-      label: "Facebook",
-      color: "hover:bg-[#1877F2]",
-    },
-
-    {
-      icon: <FaTwitter size={15} />,
-      url: "#",
-      label: "Twitter",
-      color: "hover:bg-[#1DA1F2]",
-    },
 
     {
       icon: <FaInstagram size={15} />,
-      url: "#",
+      url: "https://www.instagram.com/fses.ngo?igsh=Mm1lNmQ2cTQydGlv",
       label: "Instagram",
       color: "hover:bg-[#E4405F]",
     },
 
     {
       icon: <FaLinkedinIn size={15} />,
-      url: "#",
+      url: "https://www.linkedin.com/company/falconarmyngo/",
       label: "LinkedIn",
       color: "hover:bg-[#0A66C2]",
     },
 
-    {
-      icon: <FaYoutube size={15} />,
-      url: "#",
-      label: "YouTube",
-      color: "hover:bg-[#FF0000]",
-    },
-
-    {
-      icon: <FaWhatsapp size={15} />,
-      url: "#",
-      label: "WhatsApp",
-      color: "hover:bg-[#25D366]",
-    },
+    
   ],
 };
 
@@ -103,33 +75,39 @@ export default function Footer() {
           <div>
 
             {/* LOGO */}
-            <Link
-              to="/"
-              className="group mb-5 flex items-center gap-3"
-            >
+<Link
+  to="/"
+  className="group mb-5 flex items-center gap-3"
+>
 
-              <motion.div
-                whileHover={{
-                  rotate: 12,
-                  scale: 1.08,
-                }}
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-orange-400 shadow-lg"
-              >
+  {/* LOGO IMAGE */}
+  <motion.div
+    whileHover={{
+      rotate: 8,
+      scale: 1.08,
+    }}
+    className="overflow-hidden rounded-full shadow-lg"
+  >
 
-                <FaHeart className="text-white" />
+    <img
+      src="/assets/fses-logo.png"
+      alt="FSES Logo"
+      className="h-11 w-11 object-cover"
+    />
 
-              </motion.div>
+  </motion.div>
 
-              <h2 className="text-2xl font-bold tracking-wide">
+  {/* TEXT */}
+  <h2 className="text-2xl font-bold tracking-wide text-white">
 
-                Hope
+    FS
 
-                <span className="text-orange-400">
-                  NGO
-                </span>
+    <span className="text-orange-400">
+      ES
+    </span>
 
-              </h2>
-            </Link>
+  </h2>
+</Link>
 
             {/* TEXT */}
             <p className="text-sm leading-relaxed text-gray-300">
@@ -152,7 +130,7 @@ export default function Footer() {
 
                 {/* REGISTERED NGO */}
                 <a
-                  href="/certificates/registration.pdf"
+                  href="/docs/NGO Registration Certificate.pdf"
                   download
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs text-gray-300 transition-all hover:border-orange-400 hover:bg-white/15"
                 >
@@ -168,7 +146,7 @@ export default function Footer() {
 
                 {/* 12A */}
                 <a
-                  href="/certificates/12A.pdf"
+                  href="/docs/12A ORDER FALCON SOCIAL AND EDUCATIONAL SOCIETY.pdf"
                   download
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs text-gray-300 transition-all hover:border-orange-400 hover:bg-white/15"
                 >
@@ -184,7 +162,7 @@ export default function Footer() {
 
                 {/* 80G */}
                 <a
-                  href="/certificates/80G.pdf"
+                  href="/docs/80G ORDER FALCON SOCIAL AND EDUCATIONAL SOCIETY.pdf"
                   download
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs text-gray-300 transition-all hover:border-orange-400 hover:bg-white/15"
                 >
@@ -211,6 +189,21 @@ export default function Footer() {
                   />
 
                   CSR-1
+
+                </a>
+                {/* CSR */}
+                <a
+                  href="/docs/ngo-drama.jpeg"
+                  download
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs text-gray-300 transition-all hover:border-orange-400 hover:bg-white/15"
+                >
+
+                  <FaCheckCircle
+                    size={10}
+                    className="text-green-400"
+                  />
+
+                  NGO-Drama
 
                 </a>
               </div>
@@ -307,11 +300,11 @@ export default function Footer() {
                 <FaEnvelope className="mt-1 text-orange-400" />
 
                 <a
-                  href="mailto:info@hopengo.org"
+                  href="mailto:falconarmy.ngo@gmail.com"
                   className="break-all transition-colors hover:text-orange-400"
                 >
 
-                  info@hopengo.org
+                  falconarmy.ngo@gmail.com
 
                 </a>
               </motion.li>
@@ -347,7 +340,7 @@ export default function Footer() {
                 <FaMapMarkerAlt className="mt-1 text-orange-400" />
 
                 <span>
-                  New Delhi, India
+                   331 Samrth Dream City Indore MP
                 </span>
               </motion.li>
             </ul>
@@ -417,7 +410,7 @@ export default function Footer() {
           {/* COPYRIGHT */}
           <p className="text-sm text-gray-400">
 
-            © {new Date().getFullYear()} HopeNGO.
+            © {new Date().getFullYear()} FSES.
             All rights reserved.
 
           </p>
@@ -433,45 +426,6 @@ export default function Footer() {
 
           </p>
 
-          {/* LEGAL 
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-gray-500">
-
-            <Link
-              to="/privacy"
-              className="transition-colors hover:text-orange-400"
-            >
-
-              Privacy Policy
-
-            </Link>
-
-            <span className="hidden sm:inline">
-              •
-            </span>
-
-            <Link
-              to="/terms"
-              className="transition-colors hover:text-orange-400"
-            >
-
-              Terms of Use
-
-            </Link>
-
-            <span className="hidden sm:inline">
-              •
-            </span>
-
-            <Link
-              to="/volunteer"
-              className="font-medium text-orange-400 hover:underline"
-            >
-
-              Volunteering Now
-
-            </Link>
-          </div>
-           */}
         </div>
         
       </div>

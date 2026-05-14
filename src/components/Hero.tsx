@@ -52,8 +52,9 @@ export default function Hero() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed"
             >
-              Every child deserves education. Every family deserves dignity.
-              Join 5,000+ volunteers creating sustainable change across India.
+              Every child deserves education, guidance, and hope. Falcon Social
+              and Educational Society is working to create positive change
+              through learning, awareness, and community support.
             </motion.p>
 
             {/* Buttons */}
@@ -133,43 +134,6 @@ export default function Hero() {
             </motion.div>
             */}
           </div>
-
-          {/* Right: Image & Floating Elements (Desktop Only) */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="hidden lg:block relative w-full max-w-md"
-          >
-            <div className="relative">
-              <img
-                src="/assets/img-1.jpg"
-                alt="Community support"
-                className="rounded-3xl shadow-2xl border-4 border-white/10 w-full h-[480px] object-cover"
-              />
-
-              {/* Floating Stats Card 
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="absolute -bottom-6 -left-4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100"
-              >
-                
-                <div className="flex items-center gap-3">
-                  <div className="bg-green-100 p-2 rounded-lg">
-                    <Users size={20} className="text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-xl font-bold text-ngo-primary">50K+</p>
-                    <p className="text-xs text-gray-500 font-medium">Lives Impacted</p>
-                  </div>
-                </div>
-               
-              </motion.div>
- */}
-            </div>
-          </motion.div>
         </div>
       </div>
 
