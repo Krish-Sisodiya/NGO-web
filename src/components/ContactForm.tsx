@@ -192,7 +192,7 @@ export default function ContactForm() {
                   <input
                     {...register("phone")}
                     type="tel"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 98******10"
                     className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-ngo-secondary focus:ring-2 focus:ring-ngo-secondary/20 outline-none transition-all"
                   />
                   <Phone size={18} className="absolute left-3 top-3.5 text-gray-400" />

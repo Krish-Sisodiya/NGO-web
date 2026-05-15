@@ -213,7 +213,7 @@ export default function Footer() {
                     className="text-green-400"
                   />
 
-                  NGO-Drama
+                  NGO-Darpan
 
                 </a>
               </div>
