@@ -38,7 +38,6 @@ const CONTACT_CARDS = [
     icon: <FaPhoneAlt size={20} />,
     title: "Call Us",
     detail: "+91 9685958831",
-    sub: "Mon-Sun,",
     color: "text-green-600",
     bg: "bg-green-50",
   },
