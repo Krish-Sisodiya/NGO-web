@@ -67,7 +67,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="w-full bg-ngo-bg py-16 md:py-24 relative overflow-hidden">
+    <section className="w-full bg-ngo-bg py-16 md:py-24 relative overflow-hidden" id="contact">
       {/* Background Decorations */}
       <div className="absolute top-0 left-1/4 w-72 h-72 bg-ngo-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-ngo-secondary/5 rounded-full blur-3xl pointer-events-none" />

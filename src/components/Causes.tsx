@@ -20,10 +20,7 @@ const causes = [
     icon: <BookOpen className="w-7 h-7" />,
     title: "School Of Second Chance",
 
-    desc:
-      "Supporting dropout and working children by providing evening education and learning opportunities.",
-
-  
+    desc: "Supporting dropout and working children by providing evening education and learning opportunities.",
 
     details:
       "Helping dropout and working children continue their education through flexible learning support.",
@@ -42,10 +39,7 @@ const causes = [
     icon: <HeartPulse className="w-7 h-7" />,
     title: "Guest Lectures",
 
-    desc:
-      "Conducting sessions in schools to spread awareness about technology, digital literacy, civic sense, and personal growth.",
-
-   
+    desc: "Conducting sessions in schools to spread awareness about civic sense, and digital literacy.",
 
     details:
       "Interactive sessions in schools to spread awareness about technology, digital learning, and civic values.",
@@ -64,10 +58,7 @@ const causes = [
     icon: <Sprout className="w-7 h-7" />,
     title: "Sunday Shikshak",
 
-    desc:
-      "Teaching children in slum and underserved areas every Sunday through community-based learning programs.",
-
-  
+    desc: "Teaching children in slum and underserved areas every Sunday through community-based learning programs.",
 
     details:
       "Weekend community teaching initiative for children living in slum and underserved areas.",
@@ -88,19 +79,17 @@ const causes = [
 ============================================================================ */
 
 export default function Causes() {
-  const [selectedCause, setSelectedCause] = useState<
-    (typeof causes)[0] | null
-  >(null);
+  const [selectedCause, setSelectedCause] = useState<(typeof causes)[0] | null>(
+    null,
+  );
 
   return (
-    <section className="relative overflow-hidden bg-[#f8fafc] py-14 md:py-20" >
-
+    <section className="relative overflow-hidden bg-[#f8fafc] py-14 md:py-20" id="causes">
       {/* BACKGROUND EFFECT */}
       <div className="absolute top-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
 
       {/* CONTAINER */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
-
         {/* HEADER */}
         <motion.div
           initial={{
@@ -119,28 +108,18 @@ export default function Causes() {
           }}
           className="mb-12 text-center md:mb-16"
         >
-
           <h2 className="text-3xl font-bold text-[#0f172a] sm:text-4xl md:text-5xl">
-
-            Our Core{" "}
-
-            <span className="text-orange-500">
-              Initiatives
-            </span>
-
+            Our Core <span className="text-orange-500">Initiatives</span>
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base md:text-lg">
-
-            Focused programs creating measurable impact in education,
-            healthcare, and sustainable livelihoods.
-
+            Focused initiatives creating meaningful impact through education,
+            and community development.
           </p>
         </motion.div>
 
         {/* GRID */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
           {causes.map((cause, i) => (
             <motion.div
               key={cause.title}
@@ -164,7 +143,6 @@ export default function Causes() {
               }}
               className="group rounded-3xl border border-gray-100 bg-white p-5 shadow-lg transition-all duration-300 hover:border-orange-300 hover:shadow-2xl md:p-7"
             >
-
               {/* ICON */}
               <div
                 className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${cause.gradient} text-white shadow-lg transition-transform duration-300 group-hover:scale-110`}
@@ -174,16 +152,12 @@ export default function Causes() {
 
               {/* TITLE */}
               <h3 className="text-xl font-bold text-[#0f172a] transition-colors duration-300 group-hover:text-orange-500 md:text-2xl">
-
                 {cause.title}
-
               </h3>
 
               {/* DESC */}
               <p className="mt-3 text-sm leading-relaxed text-gray-600 md:text-base">
-
                 {cause.desc}
-
               </p>
 
               {/* BUTTON */}
@@ -191,14 +165,11 @@ export default function Causes() {
                 onClick={() => setSelectedCause(cause)}
                 className="group/btn mt-6 flex items-center gap-2 font-semibold text-orange-500"
               >
-
                 Learn More
-
                 <ArrowRight
                   size={18}
                   className="transition-transform duration-300 group-hover/btn:translate-x-1"
                 />
-
               </button>
             </motion.div>
           ))}
@@ -210,7 +181,6 @@ export default function Causes() {
       ============================================================================ */}
 
       <AnimatePresence>
-
         {selectedCause && (
           <motion.div
             initial={{
@@ -224,7 +194,6 @@ export default function Causes() {
             }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm"
           >
-
             {/* MODAL BOX */}
             <motion.div
               initial={{
@@ -247,7 +216,6 @@ export default function Causes() {
               }}
               className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-white shadow-2xl"
             >
-
               {/* TOP GRADIENT */}
               <div
                 className={`h-2 w-full bg-gradient-to-r ${selectedCause.gradient}`}
@@ -255,60 +223,43 @@ export default function Causes() {
 
               {/* CONTENT */}
               <div className="p-5 sm:p-7">
-
                 {/* CLOSE BUTTON */}
                 <button
                   onClick={() => setSelectedCause(null)}
                   className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-all duration-300 hover:bg-red-500 hover:text-white"
                 >
-
                   <X size={18} />
-
                 </button>
 
                 {/* ICON */}
                 <div
                   className={`mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${selectedCause.gradient} text-white shadow-lg`}
                 >
-
                   {selectedCause.icon}
-
                 </div>
 
                 {/* TITLE */}
                 <h3 className="text-2xl font-bold text-[#0f172a] md:text-3xl">
-
                   {selectedCause.title}
-
                 </h3>
 
                 {/* DESCRIPTION */}
                 <p className="mt-4 text-sm leading-relaxed text-gray-600 md:text-base">
-
                   {selectedCause.details}
-
                 </p>
 
                 {/* BENEFITS */}
                 <div className="mt-6 space-y-3">
-
                   {selectedCause.benefits.map((item, index) => (
                     <div
                       key={index}
                       className="flex items-center gap-3 rounded-xl bg-gray-50 px-4 py-3"
                     >
-
-                      <CheckCircle2
-                        size={18}
-                        className="text-green-500"
-                      />
+                      <CheckCircle2 size={18} className="text-green-500" />
 
                       <span className="text-sm font-medium text-gray-700">
-
                         {item}
-
                       </span>
-
                     </div>
                   ))}
                 </div>
@@ -318,9 +269,7 @@ export default function Causes() {
                   onClick={() => setSelectedCause(null)}
                   className="mt-7 w-full rounded-xl bg-gradient-to-r from-blue-600 to-orange-500 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.02]"
                 >
-
                   Close Details
-
                 </button>
               </div>
             </motion.div>

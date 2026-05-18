@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Eye, Target } from "lucide-react";
 
 export default function Story() {
   return (
@@ -20,69 +19,16 @@ export default function Story() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ngo-primary leading-tight mb-4">
-                Our Story & <span className="text-ngo-secondary">Vision</span>
+                Our <span className="text-ngo-secondary">Vision</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Falcon Social and Educational Society was started with a simple
-                vision to make education and awareness accessible for every
-                child, especially those who are deprived of proper learning
-                opportunities. Through community teaching, awareness sessions,
-                and social initiatives, we are working to create a better and
-                brighter future.
+                vision to make quality education to every Indian, especially
+                those who are deprived of proper learning opportunities. Through
+                community teaching, awareness sessions, and social initiatives,
+                we are working to create a better and brighter future.
               </p>
             </motion.div>
-
-            {/* Vision & Mission Cards */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="grid sm:grid-cols-2 gap-4"
-            >
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition group">
-                <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition">
-                  <Eye className="w-5 h-5 text-ngo-primary" />
-                </div>
-                <h3 className="font-bold text-ngo-text mb-2">Our Vision</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  To build a society where every child gets equal access to
-                  education, awareness, and opportunities.
-                </p>
-              </div>
-              <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition group">
-                <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition">
-                  <Target className="w-5 h-5 text-ngo-secondary" />
-                </div>
-                <h3 className="font-bold text-ngo-text mb-2">Our Mission</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  To empower children and communities through learning,
-                  guidance, digital awareness, and social support.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Impact Stats 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200"
-            >
-              {[
-                { icon: <Users className="w-6 h-6 text-ngo-secondary" />, num: "50K+", label: "Lives Impacted" },
-                { icon: <Globe className="w-6 h-6 text-ngo-secondary" />, num: "12", label: "States Covered" },
-                { icon: <CalendarDays className="w-6 h-6 text-ngo-secondary" />, num: "10+", label: "Years Active" },
-              ].map((stat, i) => (
-                <div key={i} className="text-center">
-                  <div className="flex justify-center mb-2">{stat.icon}</div>
-                  <h3 className="text-xl md:text-2xl font-bold text-ngo-primary">{stat.num}</h3>
-                  <p className="text-xs md:text-sm text-gray-500 font-medium">{stat.label}</p>
-                </div>
-              ))}
-            </motion.div>
-             */}
           </div>
 
           {/* 🔹 Right: Image & Floating Elements (Desktop Only) */}
@@ -95,33 +41,13 @@ export default function Story() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/60">
               <img
-                src="/assets/img-8.jpeg"
+                src="/assets/img-7.jpeg"
                 alt="Volunteers teaching children in rural India"
                 className="w-full h-[32.5rem] object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ngo-primary/40 to-transparent pointer-events-none"></div>
             </div>
-
-            {/* Floating Quote Card 
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="absolute -bottom-6 -left-6 bg-white p-5 rounded-xl shadow-xl border border-gray-100 max-w-xs"
-            >
-              <div className="flex items-start gap-3">
-                <HeartHandshake className="w-6 h-6 text-ngo-secondary flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-sm font-medium text-ngo-text italic leading-snug">
-                    "Service to others is the rent you pay for your room here on earth."
-                  </p>
-                  <p className="text-xs text-gray-500 mt-2 font-semibold">— Muhammad Ali</p>
-                </div>
-              </div>
-            </motion.div>
-            */}
           </motion.div>
         </div>
       </div>

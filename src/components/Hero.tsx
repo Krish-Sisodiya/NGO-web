@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-ngo-primary pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-ngo-primary pt-20 overflow-hidden" id="home">
       {/* 🔹 Background Image + Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -78,7 +78,7 @@ export default function Hero() {
               {/* Secondary Button */}
               {/* Secondary Button */}
               <motion.button
-                onClick={() => (window.location.href = "/volunteer")}
+                onClick={() => (window.location.href = "#contact")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="

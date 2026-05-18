@@ -4,6 +4,7 @@ import Story from "../components/Story";
 import Causes from "../components/Causes";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
+import CSR from "../components/CSR";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Hero />
       <Story />
       <Causes />
+      <CSR/>
       <ContactForm />
       <Footer />
     </>
